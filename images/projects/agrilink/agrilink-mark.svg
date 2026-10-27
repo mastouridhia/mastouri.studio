@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- AgriLink, "Split Leaf". Ink #111A12 · Paper #FBEED9 · Accent #2E7D32 · Tile #2E7D32 -->
+  <title>AgriLink</title>
+  <circle cx="50" cy="50" r="50" fill="#111A12"/>
+  <path d="M26 74A42.4 42.4 0 0 1 74 26Z" fill="#FBEED9"/>
+  <path d="M74 26A42.4 42.4 0 0 1 26 74Z" fill="#2E7D32"/>
+</svg>

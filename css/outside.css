@@ -1,0 +1,509 @@
+/* ============================================================
+   OUTSIDE THE FRAME — personal page
+   Builds on case-study.css (cs-kicker, cs-title, cs-h2, cs-reveal…)
+   ============================================================ */
+
+/* ---------- "Right now" strip ---------- */
+.of-now {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  border: 1px solid var(--color-rule);
+  background: var(--color-rule);
+}
+.of-now > div { padding: 1.25rem; background: var(--color-canvas); }
+.of-now dt,
+.of-bits dt,
+.of-card__label,
+.of-specs dt {
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.of-now dd { margin-top: .35rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
+@media (min-width: 900px) { .of-now { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ---------- Section heads ---------- */
+.of-head {
+  display: grid;
+  gap: .75rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+.of-head__num {
+  font-family: var(--font-label);
+  font-size: .8rem;
+  color: var(--color-accent);
+}
+@media (min-width: 900px) {
+  .of-head { grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 22rem); align-items: end; }
+  .of-head .cs-body { justify-self: end; text-align: right; }
+  .of-head .of-follow { grid-column: 3; justify-self: end; }
+}
+
+/* ---------- Card grids ---------- */
+.of-grid { display: grid; gap: clamp(1rem, 2vw, 1.5rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 900px) {
+  .of-grid--square,
+  .of-grid--poster,
+  .of-grid--games { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .of-grid--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) { .of-grid--wide { grid-template-columns: 1fr; } }
+
+.of-card__media {
+  --tone: #333;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  margin-bottom: .9rem;
+  background:
+    radial-gradient(120% 90% at 20% 10%, color-mix(in srgb, var(--tone) 70%, white) 0%, transparent 55%),
+    var(--tone);
+}
+.of-grid--poster .of-card__media { aspect-ratio: 2 / 3; }
+/* Shorter posters on wide screens so the whole section fits in one screen */
+@media (min-width: 900px) { .of-grid--poster .of-card__media { aspect-ratio: 3 / 4; } }
+.of-grid--wide .of-card__media { aspect-ratio: 4 / 3; }
+.of-grid--games .of-card__media { aspect-ratio: 16 / 9; }
+
+/* ---------- Discord (games) ---------- */
+.of-discord {
+  display: inline-flex; align-items: center; gap: .9rem;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  padding: .7rem 1.1rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 300ms var(--ease);
+}
+.of-discord:hover { border-color: #5865f2; }
+.of-discord__label {
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.of-discord__name { font-family: var(--font-display); font-weight: 500; color: #8c96ff; }
+.of-card__media img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 900ms var(--ease);
+}
+.of-card:hover .of-card__media img { transform: scale(1.05); }.of-card__media--space {
+  background:
+    radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 20%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 40% 75%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 85% 65%, #fff 50%, transparent 51%),
+    radial-gradient(60% 60% at 75% 80%, #3949ab 0%, transparent 70%),
+    #05060f;
+}
+.of-card__title { margin-top: .3rem; font-family: var(--font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; line-height: 1.15; }
+.of-card__note { margin-top: .3rem; font-size: .9rem; color: var(--color-muted); }
+
+/* ---------- Music: a record per genre ----------
+   The sleeve shows the album art; the vinyl sits behind it and peeks
+   out. Hovering the record slides it out; clicking it plays the record
+   (the script at the end of the page), which spins with the song's art
+   on the label. */
+.of-vinyl { position: relative; margin-bottom: .9rem; padding-right: 30%; }
+.of-vinyl[role="button"] { cursor: pointer; }
+.of-vinyl:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.of-vinyl__sleeve {
+  --tone: inherit;
+  z-index: 1;
+  margin-bottom: 0;
+  box-shadow: 6px 0 18px rgba(0, 0, 0, .35);
+}
+.of-vinyl__art { opacity: 0; transition: opacity 700ms var(--ease), transform 900ms var(--ease) !important; }
+.of-vinyl__art.is-in { opacity: 1; }
+/* Shade at the foot of the sleeve so the equalizer reads on any art */
+.of-vinyl__sleeve::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, .5), transparent 45%);
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+  pointer-events: none;
+}
+.of-card.is-playing .of-vinyl__sleeve::before { opacity: 1; }
+/* Ring wear on the sleeve, from the record inside */
+.of-vinyl__sleeve::after {
+  content: "";
+  position: absolute; inset: 6%; z-index: 1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .07), inset 0 0 0 3px rgba(0, 0, 0, .08);
+  pointer-events: none;
+}
+.of-vinyl__disc {
+  position: absolute; top: 3%; left: 2%;
+  width: 66%; aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translateX(10%);
+  transition: transform 900ms var(--ease);
+}
+.of-vinyl:hover .of-vinyl__disc,
+.of-vinyl:focus-visible .of-vinyl__disc,
+.of-card.is-playing .of-vinyl__disc { transform: translateX(48%); }
+.of-vinyl__record {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #0e0e0e 0 19%, transparent 19.5%),
+    repeating-radial-gradient(circle, #141414 0 1.5px, #1f1f1f 1.5px 3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+  animation: of-spin 1.8s linear infinite paused;
+}
+.of-card.is-playing .of-vinyl__record { animation-play-state: running; }
+/* The label: the genre's tone, then the playing song's art */
+.of-vinyl__label {
+  position: absolute; inset: 31.5%;
+  border-radius: 50%;
+  background: var(--tone) center / cover no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1);
+}
+.of-vinyl__label::after {
+  content: "";
+  position: absolute; inset: 44%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #050505 0 45%, #bdbdbd 50% 70%, #7a7a7a 75%);
+}
+/* Light on the grooves stays put while the record turns under it */
+.of-vinyl__disc::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 20deg, transparent 0 8%, rgba(255, 255, 255, .13) 13%, transparent 18% 58%, rgba(255, 255, 255, .08) 63%, transparent 68%);
+  -webkit-mask: radial-gradient(circle, transparent 19.5%, #000 20%);
+          mask: radial-gradient(circle, transparent 19.5%, #000 20%);
+  pointer-events: none;
+}
+@keyframes of-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .of-vinyl__record { animation: none; }
+}
+
+/* ---------- Music: songs per genre ---------- */
+.of-songs { list-style: none; margin-top: .75rem; border-top: 1px solid var(--color-rule); }
+.of-song {
+  position: relative;
+  display: grid; grid-template-columns: 1.4rem 2.5rem minmax(0, 1fr) auto; align-items: center; gap: .65rem;
+  width: 100%;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--color-rule);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 300ms var(--ease);
+}
+.of-song:disabled { cursor: default; }
+.of-song:not(:disabled):hover,
+.of-song.is-playing { color: var(--color-accent); }
+.of-song__num { font-family: var(--font-label); font-size: .72rem; color: var(--color-muted); }
+.of-song__art {
+  width: 2.5rem; aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--color-rule) center / cover no-repeat;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  transition: transform 300ms var(--ease);
+}
+.of-song:not(:disabled):hover .of-song__art,
+.of-song.is-playing .of-song__art { transform: scale(1.06); }
+.of-song__name { min-width: 0; font-size: .92rem; font-weight: 500; line-height: 1.25; }
+.of-song__name small {
+  display: block;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: .8rem; font-weight: 400; color: var(--color-muted);
+}
+/* How far into the preview: a line along the row's bottom rule */
+.of-song::after {
+  content: "";
+  position: absolute; left: 0; bottom: -1px;
+  width: calc(var(--p, 0) * 100%); height: 1px;
+  background: var(--color-accent);
+  transition: width 250ms linear;
+}
+@media (max-width: 599px) {
+  .of-song { grid-template-columns: 2.25rem minmax(0, 1fr) auto; }
+  .of-song__num { display: none; }
+  .of-song__art { width: 2.25rem; }
+}
+
+/* Side B: the extra songs fold out under the list, row by row */
+.of-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 600ms var(--ease);
+}
+.of-more > div { min-height: 0; overflow: hidden; }
+.of-card.is-open .of-more { grid-template-rows: 1fr; }
+.of-songs--b { margin-top: 0; border-top: 0; }
+.of-songs--b li {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+}
+.of-card.is-open .of-songs--b li { opacity: 1; transform: none; }
+.of-card.is-open .of-songs--b li:nth-child(2) { transition-delay: 80ms; }
+.of-card.is-open .of-songs--b li:nth-child(3) { transition-delay: 160ms; }
+
+.of-flip {
+  display: inline-flex; align-items: center; gap: .55rem;
+  margin-top: .85rem;
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color 300ms var(--ease);
+}
+.of-flip:hover,
+.of-flip[aria-expanded="true"] { color: var(--color-accent); }
+/* A tiny record that turns over when the side flips */
+.of-flip__disc {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, currentColor 0 18%, #111 22% 30%, transparent 32%),
+    repeating-radial-gradient(circle, #1a1a1a 0 1px, #2a2a2a 1px 2px);
+  box-shadow: 0 0 0 1px var(--color-rule);
+  transition: transform 600ms var(--ease);
+}
+.of-flip:hover .of-flip__disc { transform: rotate(90deg); }
+.of-flip[aria-expanded="true"] .of-flip__disc { transform: rotateY(180deg) rotate(180deg); }
+.of-flip__count { opacity: .7; }
+.of-flip[aria-expanded="true"] .of-flip__count { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .of-more, .of-songs--b li, .of-flip__disc { transition: none; }
+}
+
+/* Equalizer: still bars until its song plays, then they bounce */
+.of-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.of-eq i {
+  width: 2px; height: 100%;
+  background: currentColor;
+  transform: scaleY(.25);
+  transform-origin: bottom;
+}
+.of-song .of-eq { opacity: 0; transition: opacity 300ms var(--ease); }
+.of-song:not(:disabled):hover .of-eq,
+.of-song.is-playing .of-eq { opacity: 1; }
+.of-song.is-playing .of-eq i,
+.of-card.is-playing .of-eq--cover i { animation: of-eq 900ms ease-in-out infinite alternate; }
+.of-eq i:nth-child(2) { animation-delay: -300ms !important; animation-duration: 700ms !important; }
+.of-eq i:nth-child(3) { animation-delay: -600ms !important; animation-duration: 1100ms !important; }
+.of-eq i:nth-child(4) { animation-delay: -150ms !important; animation-duration: 800ms !important; }
+.of-eq i:nth-child(5) { animation-delay: -450ms !important; animation-duration: 1000ms !important; }
+@keyframes of-eq {
+  0% { transform: scaleY(.2); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(.45); }
+}
+
+/* The sleeve lights up with a big equalizer while one of its songs plays */
+.of-eq--cover {
+  position: absolute; left: 1rem; bottom: 1rem; z-index: 2;
+  gap: 4px; height: 2.5rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 400ms var(--ease);
+}
+.of-eq--cover i { width: 5px; }
+.of-card.is-playing .of-eq--cover { opacity: 1; }
+.of-card.is-playing .of-card__media img { transform: scale(1.05); }
+@media (prefers-reduced-motion: reduce) {
+  .of-eq i { animation: none !important; transform: scaleY(.7); }
+}
+
+/* ---------- Dark band (cars) ---------- */
+.of-band { background: var(--color-ink); color: var(--color-canvas); }
+.of-band .cs-body,
+.of-band .of-card__note,
+.of-band .of-card__label,
+.of-band .of-specs dt { color: rgba(255, 255, 255, .55); }
+.of-specs {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: .75rem; padding-top: .75rem;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+}
+.of-specs dd { margin-top: .2rem; font-family: var(--font-display); font-weight: 500; }
+
+/* ---------- Bits & pieces ---------- */
+.of-bits { display: grid; border-top: 1px solid var(--color-rule); }
+.of-bits > div {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.of-bits dd { font-family: var(--font-display); font-size: clamp(1.05rem, 1.8vw, 1.5rem); font-weight: 500; text-align: right; }
+@media (min-width: 900px) {
+  .of-bits { grid-template-columns: 1fr 1fr; column-gap: 3rem; }
+}
+
+/* ---------- Outro ---------- */
+.of-outro { text-align: center; }
+.of-outro__title {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+}
+.of-outro__links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 2.5rem;
+  margin-top: 2.5rem;
+}
+/* Spotify link under the music heading's blurb. While a song plays it
+   names the song (inline script) and its bars wake up */
+.of-follow { justify-self: start; display: inline-flex; align-items: center; }
+.of-follow .of-eq {
+  width: 0; margin-right: 0; opacity: 0; overflow: hidden;
+  transition: width 300ms var(--ease), margin 300ms var(--ease), opacity 300ms var(--ease);
+}
+.of-follow.is-live { color: var(--color-accent); border-color: var(--color-accent); }
+.of-follow.is-live .of-eq { width: 12px; margin-right: .5rem; opacity: 1; }
+.of-follow.is-live .of-eq i { animation: of-eq 900ms ease-in-out infinite alternate; }
+.of-follow__text { margin-right: .35em; transition: opacity 150ms var(--ease); }
+.of-follow__text.is-swapping { opacity: 0; }
+.of-outro__links a,
+.of-follow {
+  padding-bottom: .2rem;
+  font-family: var(--font-label);
+  font-size: .8rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-rule);
+  transition: border-color 300ms var(--ease), color 300ms var(--ease);
+}
+.of-outro__links a:hover,
+.of-follow:hover { color: var(--color-accent); border-color: var(--color-accent); }
+.upside .of-outro__title { text-shadow: 0 0 60px rgba(229, 57, 53, .25); }
+
+/* ============================================================
+   THE UPSIDE DOWN
+   The other side of the glass: same page, darker air, a red
+   glow from somewhere below and spores drifting (main.js, 19).
+   ============================================================ */
+.upside {
+  --cs-canvas: #0b0708;
+  --cs-ink: #efe6e2;
+  --cs-rule: rgba(239, 230, 226, .12);
+  --cs-muted: rgba(239, 230, 226, .6);
+  --cs-panel: #160d0e;
+  --color-rule: rgba(239, 230, 226, .12);
+  --color-muted: rgba(239, 230, 226, .6);
+  --color-accent: #ff6a5c;
+  color-scheme: dark;
+}
+.upside::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(90% 60% at 50% 115%, rgba(229, 57, 53, .22) 0%, rgba(140, 14, 22, .09) 45%, transparent 75%),
+    radial-gradient(60% 50% at 100% 0%, rgba(120, 10, 18, .14) 0%, transparent 70%);
+  box-shadow: inset 0 0 22vmax 3vmax rgba(0, 0, 0, .6);
+}
+.upside .cs-main { position: relative; z-index: 1; }
+.upside .cs-title { text-shadow: 0 0 60px rgba(229, 57, 53, .25); }
+.upside .nav-toggle span { background: var(--cs-ink); }
+.upside .site-menu { background: #0b0708; }
+.upside .menu-email { color: var(--cs-ink); }
+.upside .site-nav.is-scrolled {
+  background: rgba(11, 7, 8, .82);
+  box-shadow: 0 1px 0 rgba(239, 230, 226, .08);
+}
+.upside .of-now > div { background: #110a0b; }
+.upside .of-now dt { color: var(--color-accent); }
+.upside .of-card__media { filter: saturate(.8) brightness(.9); }
+.upside .of-band { background: #050304; }
+.upside .footer { background: #050304; }
+
+/* The sound switch for the song carried over from the home page
+   (main.js, 19): the home page's .otf-sound, fixed bottom left */
+.upside-sound {
+  --otf-neon: #ff6a5c;
+  position: fixed;
+  z-index: 40;
+  left: 24px;
+  bottom: 20px;
+}
+.upside-sound[hidden] { display: none; }
+
+.upside-spores {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Arriving through the portal (html.from-portal, set before the first
+   paint): the first frame is the last frame of the home page's red
+   (.otf-portal in styles.css), then the red sinks and the page fades up. */
+html.from-portal::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 64%, #e0222b 0, #a50f18 40%, #4d060c 100%);
+  filter: brightness(.55);
+  animation: upside-on 1.8s ease-in-out forwards;
+}
+@keyframes upside-on {
+  0% { opacity: 1; filter: brightness(.55); }
+  35% { opacity: 1; filter: brightness(.22); }
+  55% { opacity: .55; filter: brightness(.15); }
+  62% { opacity: .75; }
+  100% { opacity: 0; filter: brightness(.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.from-portal::after { animation: upside-fade .6s ease-out forwards; }
+  @keyframes upside-fade { to { opacity: 0; } }
+}
+
+/* Leaving for the home page (main.js, 19): the red flickers back in,
+   then washes out to the home page's cream, the frame it opens on
+   (html.from-upside in styles.css). */
+.upside-exit {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 64%, #e0222b 0, #a50f18 40%, #4d060c 100%);
+  opacity: 0;
+}
+.upside-exit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 64%, #fff 0, #f4f4ef 60%);
+  opacity: 0;
+}
+.upside-exit.is-on { animation: upside-exit 1.3s ease-in-out forwards; }
+.upside-exit.is-on::before { animation: upside-exit-wash 1.3s ease-in forwards; }
+@keyframes upside-exit {
+  0% { opacity: 0; }
+  14% { opacity: .75; }
+  22% { opacity: .35; }
+  40%, 100% { opacity: 1; }
+}
+@keyframes upside-exit-wash {
+  0%, 50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .upside-exit.is-on { animation: none; opacity: 1; transition: opacity .4s linear; }
+  .upside-exit.is-on::before { animation: none; opacity: 1; }
+}

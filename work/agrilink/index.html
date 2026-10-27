@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgriLink - Case Study · mastouri's studio</title>
+  <meta name="description" content="AgriLink: a React Native + Firebase app that connects Tunisian farmers, maps nearby farms and diagnoses plant diseases from a photo. Hackathon project, 2nd place. Designed and built by Mastouri Dhia." />
+  <link rel="icon" type="image/svg+xml" href="../../images/projects/agrilink/agrilink-mark.svg" />
+  <link rel="canonical" href="https://your-domain.com/work/agrilink/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/agrilink/" />
+  <meta property="og:title" content="AgriLink - Case Study" />
+  <meta property="og:description" content="AgriLink: a React Native + Firebase app that connects Tunisian farmers, maps nearby farms and diagnoses plant diseases from a photo. Hackathon project, 2nd place. Designed and built by Mastouri Dhia." />
+  <meta property="og:image" content="https://your-domain.com/images/social/agrilink.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/agrilink.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+  <style>
+    .case-study--agrilink {
+      --cs-brand: #2e7d32;
+      --cs-showcase-bg: linear-gradient(150deg, #3d8b40 0%, #1b5e20 100%);
+    }
+  </style>
+</head>
+<body class="case-study case-study--agrilink">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <p class="cs-kicker">(Case Study · 02)</p>
+      <h1 class="cs-title">AgriLink</h1>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>Mobile App</li>
+        <li>AI Diagnosis</li>
+        <li>Maps &amp; Geo</li>
+        <li>Real-time Chat</li>
+        <li>Hackathon</li>
+      </ul>
+      <p class="cs-award">Hackathon · 2nd Place</p>
+      <p class="cs-lead">
+        AgriLink is a mobile app that helps Tunisian farmers find each other, share know-how and diagnose plant
+        diseases from a single photo. Built during a hackathon with React Native, Expo and Firebase, it won
+        2nd place.
+      </p>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Mobile App Design &amp; Development</dd></div>
+        <div><dt>Result</dt><dd>2nd Place · Hackathon</dd></div>
+        <div><dt>Year</dt><dd>2025</dd></div>
+        <div><dt>Stack</dt><dd>React Native · Expo · Firebase</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== HERO VISUAL (HTML mockups rebuilt from the app's screens) ===== -->
+    <section class="container">
+      <div class="cs-showcase cs-showcase--hero" role="img" aria-label="Four AgriLink screens: home feed, farmer map, plant diagnosis and chat">
+        <!-- Home -->
+        <div class="mock" aria-hidden="true"><div class="mock__screen">
+          <div class="mock__bar">Home</div>
+          <div class="mock__body">
+            <div class="mock__h">Plant Information</div>
+            <div class="mock__card">
+              <div class="mock__img"></div>
+              <strong>Olive Tree</strong>
+              <div class="mock__muted"><em>Olea europaea</em></div>
+              <div class="mock__chips"><span class="mock__chip">Average</span><span class="mock__chip">Perennial</span></div>
+            </div>
+            <div class="mock__h">Nearby Farmers</div>
+            <div class="mock__card">
+              <div class="mock__row" style="justify-content:flex-start">
+                <span class="mock__avatar">SK</span>
+                <div><strong>Sami K.</strong><div class="mock__muted">Ferme El Amal · 3.2 km away</div></div>
+              </div>
+              <div class="mock__chips"><span class="mock__chip">Olives</span><span class="mock__chip">Citrus</span></div>
+            </div>
+          </div>
+          <div class="mock__tabs"><span class="is-on">Home</span><span>Map</span><span>Diagnosis</span><span>Chat</span><span>Profile</span></div>
+        </div></div>
+        <!-- Map -->
+        <div class="mock" aria-hidden="true"><div class="mock__screen">
+          <div class="mock__bar">Map</div>
+          <div class="mock__map">
+            <span class="mock__radius"></span>
+            <span class="mock__me"></span>
+            <span class="mock__pin" style="top:30%;left:36%"></span>
+            <span class="mock__pin" style="top:48%;left:62%"></span>
+            <span class="mock__pin mock__pin--red" style="top:55%;left:30%"></span>
+            <span class="mock__pin" style="top:22%;left:66%"></span>
+            <span class="mock__pin mock__pin--red" style="top:72%;left:70%"></span>
+          </div>
+          <div class="mock__card mock__sheet">
+            <div class="mock__toggle"><span>Organic Farms Only</span><span class="mock__switch"></span></div>
+            <div class="mock__toggle"><span>Vegetables</span><span class="mock__switch"></span></div>
+            <div class="mock__toggle"><span>Grains</span><span class="mock__switch mock__switch--off"></span></div>
+          </div>
+          <div class="mock__tabs"><span>Home</span><span class="is-on">Map</span><span>Diagnosis</span><span>Chat</span><span>Profile</span></div>
+        </div></div>
+        <!-- Diagnosis -->
+        <div class="mock" aria-hidden="true"><div class="mock__screen">
+          <div class="mock__bar">Plant Disease Diagnosis</div>
+          <div class="mock__body">
+            <div class="mock__card"><div class="mock__img mock__img--leaf"></div><span class="mock__muted">Photo analysed</span></div>
+            <div class="mock__card mock__card--soft mock__row"><span>Early blight</span><span class="mock__chip mock__chip--solid">82%</span></div>
+            <div class="mock__card mock__card--soft mock__row"><span>Leaf spot</span><span class="mock__chip">11%</span></div>
+            <div class="mock__btn">Take Photo</div>
+            <div class="mock__btn mock__btn--ghost">Pick from Gallery</div>
+          </div>
+          <div class="mock__tabs"><span>Home</span><span>Map</span><span class="is-on">Diagnosis</span><span>Chat</span><span>Profile</span></div>
+        </div></div>
+        <!-- Chat -->
+        <div class="mock" aria-hidden="true"><div class="mock__screen">
+          <div class="mock__bar">Sami K.</div>
+          <div class="mock__body">
+            <div class="mock__bubble mock__bubble--me">How do you handle pests on your tomatoes without chemicals?</div>
+            <div class="mock__bubble">Companion planting with basil, plus natural predators. Works well here in Nabeul.</div>
+            <div class="mock__bubble mock__bubble--me">Thanks! I'll try it this season.</div>
+            <div class="mock__input">Type a message…</div>
+          </div>
+          <div class="mock__tabs"><span>Home</span><span>Map</span><span>Diagnosis</span><span class="is-on">Chat</span><span>Profile</span></div>
+        </div></div>
+      </div>
+      <p class="cs-note">Screens rebuilt from the app's source code. Names and results shown are example data.</p>
+    </section>
+
+    <!-- ===== ROLE / PROBLEM / IDEA / RESULT ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(My Role)</p>
+        <ul class="cs-list">
+          <li>Designed and built the app end to end during the hackathon, from sign-in to diagnosis.</li>
+          <li>Connected the plant-disease diagnosis to the Plant.id API, from camera or gallery to a ranked result.</li>
+          <li>Built the farmer map with a 10 km radius and organic and crop filters.</li>
+          <li>Set up Firebase for accounts, farmer profiles and chat, with offline persistence.</li>
+        </ul>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Problem)</p>
+        <p class="cs-body">Small farmers often face crop disease alone. Expert advice is far away, and the farmer down the road who solved the same problem last season is a stranger. By the time help arrives, the harvest has already taken the hit.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Idea)</p>
+        <p class="cs-body">Put three things in every farmer's pocket: a way to <strong>identify a sick plant</strong> from a photo, a map of <strong>who farms nearby</strong> and what they grow, and a <strong>direct line</strong> to ask them.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Result)</p>
+        <p class="cs-body">A working app demoed in front of the jury, awarded <strong>2nd place</strong>. The code was later cleaned up and published: API keys moved to environment variables, duplicate Firebase setup merged, and the types tightened.</p>
+      </div>
+    </section>
+
+    <!-- ===== APPROACH ===== -->
+    <section class="container cs-section">
+      <h2 class="cs-h2 cs-reveal">Approach</h2>
+      <div class="cs-approach">
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">01</span>
+          <h3 class="cs-step__title">Diagnose First</h3>
+          <p class="cs-body">The most urgent need gets its own tab: take a photo, get likely diseases with a confidence score in seconds.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">02</span>
+          <h3 class="cs-step__title">Local by Default</h3>
+          <p class="cs-body">Location powers everything: the closest farmers come first, distances are shown in kilometres, and the map opens on your area.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">03</span>
+          <h3 class="cs-step__title">Built for Tunisia</h3>
+          <p class="cs-body">Profiles use the country's 24 governorates, local crops and irrigation types. The app was planned in Arabic and English.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">04</span>
+          <h3 class="cs-step__title">Ship in a Weekend</h3>
+          <p class="cs-body">Expo, Firebase and React Native Paper let a hackathon timeline focus on the farmer's problem, not on infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCOPE ===== -->
+    <section class="container cs-section--tight">
+      <div class="cs-scope cs-reveal">
+        <p class="cs-kicker">(Scope)</p>
+      </div>
+      <div class="cs-stats cs-stats--center cs-reveal">
+        <div><span class="cs-stat__num">2nd</span><span class="cs-stat__label">place at the hackathon</span></div>
+        <div><span class="cs-stat__num">24</span><span class="cs-stat__label">Tunisian governorates in farmer profiles</span></div>
+        <div><span class="cs-stat__num">10<small style="font-size:.4em"> km</small></span><span class="cs-stat__label">radius for discovering nearby farmers</span></div>
+      </div>
+    </section>
+
+    <!-- ===== SYSTEMS ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01)</p>
+        <h2 class="cs-h2 cs-h2--xl">One App.<br />Three Tools.</h2>
+        <p class="cs-body">Diagnosis, discovery and conversation in five tabs. Each one answers a question a farmer actually asks: what's wrong with my plant, who can help, and how do I reach them?</p>
+      </div>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 01 · Plant Diagnosis)</p>
+          <h3 class="cs-h2">A photo in, an answer out</h3>
+          <p class="cs-body">The farmer takes a photo or picks one from the gallery. The image is sent to the Plant.id health-assessment API, which returns the likely diseases ranked by probability. A healthy plant gets a clear “Healthy Plant” result.</p>
+          <dl class="cs-facts">
+            <div><dt>Input</dt><dd>Camera or gallery, cropped to 4:3</dd></div>
+            <div><dt>Engine</dt><dd>Plant.id health assessment (crops model)</dd></div>
+            <div><dt>Output</dt><dd>Disease names with confidence percentages</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:var(--cs-showcase-bg)">
+          <div class="mock" aria-hidden="true"><div class="mock__screen">
+            <div class="mock__bar">Plant Disease Diagnosis</div>
+            <div class="mock__body">
+              <div class="mock__card"><div class="mock__img mock__img--leaf"></div><span class="mock__muted">Photo analysed</span></div>
+              <div class="mock__card mock__card--soft mock__row"><span>Early blight</span><span class="mock__chip mock__chip--solid">82%</span></div>
+              <div class="mock__card mock__card--soft mock__row"><span>Leaf spot</span><span class="mock__chip">11%</span></div>
+              <div class="mock__btn">Take Photo</div>
+              <div class="mock__btn mock__btn--ghost">Pick from Gallery</div>
+            </div>
+            <div class="mock__tabs"><span>Home</span><span>Map</span><span class="is-on">Diagnosis</span><span>Chat</span><span>Profile</span></div>
+          </div></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 02 · Farmer Map)</p>
+          <h3 class="cs-h2">Who farms near me?</h3>
+          <p class="cs-body">The map centres on the farmer and draws a 10 km circle. Organic farms show as green pins and conventional farms as red. Layer switches filter by organic only or by crop type. Tapping a pin opens the farmer's card with their crops and distance.</p>
+          <dl class="cs-facts">
+            <div><dt>Radius</dt><dd>10 km discovery circle around the user</dd></div>
+            <div><dt>Layers</dt><dd>Organic farms · Vegetables · Fruits · Grains</dd></div>
+            <div><dt>Data</dt><dd>Farmer profiles from Firestore, sorted by distance</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:var(--cs-showcase-bg)">
+          <div class="mock" aria-hidden="true"><div class="mock__screen">
+            <div class="mock__bar">Map</div>
+            <div class="mock__map">
+              <span class="mock__radius"></span>
+              <span class="mock__me"></span>
+              <span class="mock__pin" style="top:30%;left:36%"></span>
+              <span class="mock__pin" style="top:48%;left:62%"></span>
+              <span class="mock__pin mock__pin--red" style="top:55%;left:30%"></span>
+              <span class="mock__pin" style="top:22%;left:66%"></span>
+              <span class="mock__pin mock__pin--red" style="top:72%;left:70%"></span>
+            </div>
+            <div class="mock__card mock__sheet">
+              <div class="mock__toggle"><span>Organic Farms Only</span><span class="mock__switch"></span></div>
+              <div class="mock__toggle"><span>Vegetables</span><span class="mock__switch"></span></div>
+              <div class="mock__toggle"><span>Grains</span><span class="mock__switch mock__switch--off"></span></div>
+            </div>
+            <div class="mock__tabs"><span>Home</span><span class="is-on">Map</span><span>Diagnosis</span><span>Chat</span><span>Profile</span></div>
+          </div></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 03 · Network &amp; Chat)</p>
+          <h3 class="cs-h2">Advice from the next field over</h3>
+          <p class="cs-body">The home feed lists the ten closest farmers with their farm name, distance and crops, next to a strip of plant information from the Perenual database. From there it's one tap to a direct message, a group chat, or the plant-group pool, where you swipe right to join a group.</p>
+          <dl class="cs-facts">
+            <div><dt>Messaging</dt><dd>Direct messages and group chats</dd></div>
+            <div><dt>Groups</dt><dd>Swipe-to-join plant group cards</dd></div>
+            <div><dt>Knowledge</dt><dd>Perenual plant species and care info</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:var(--cs-showcase-bg)">
+          <div class="mock" aria-hidden="true"><div class="mock__screen">
+            <div class="mock__bar">Sami K.</div>
+            <div class="mock__body">
+              <div class="mock__bubble mock__bubble--me">How do you handle pests on your tomatoes without chemicals?</div>
+              <div class="mock__bubble">Companion planting with basil, plus natural predators. Works well here in Nabeul.</div>
+              <div class="mock__bubble mock__bubble--me">Thanks! I'll try it this season.</div>
+              <div class="mock__input">Type a message…</div>
+            </div>
+            <div class="mock__tabs"><span>Home</span><span>Map</span><span>Diagnosis</span><span class="is-on">Chat</span><span>Profile</span></div>
+          </div></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 04 · Accounts &amp; Offline)</p>
+          <h3 class="cs-h2">Works where the signal doesn't</h3>
+          <p class="cs-body">Farmers sign in with email, Google or as a guest, then build a profile with their governorate, crops, farm size, experience and irrigation. Fields often have weak coverage, so Firestore offline persistence and local storage keep key data available without a connection.</p>
+          <dl class="cs-facts">
+            <div><dt>Auth</dt><dd>Firebase: email, Google and guest sign-in</dd></div>
+            <div><dt>Profile</dt><dd>Region, crops, farm size, experience, irrigation</dd></div>
+            <div><dt>Offline</dt><dd>Firestore persistence + AsyncStorage</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:var(--cs-showcase-bg)">
+          <div class="mock" aria-hidden="true"><div class="mock__screen">
+            <div class="mock__bar">Complete Your Profile</div>
+            <div class="mock__body">
+              <div class="mock__card"><span class="mock__muted">Full Name *</span><div>Sami K.</div></div>
+              <div class="mock__card"><span class="mock__muted">Farm Name *</span><div>Ferme El Amal</div></div>
+              <div class="mock__card"><span class="mock__muted">Region in Tunisia *</span><div class="mock__chips"><span class="mock__chip mock__chip--solid">Nabeul</span><span class="mock__chip">Sousse</span><span class="mock__chip">Sfax</span></div></div>
+              <div class="mock__h">Select Your Crops</div>
+              <div class="mock__chips"><span class="mock__chip mock__chip--solid">Olives</span><span class="mock__chip mock__chip--solid">Citrus</span><span class="mock__chip">Wheat</span><span class="mock__chip">Tomatoes</span></div>
+              <div class="mock__btn" style="margin-top:auto">Save Profile</div>
+            </div>
+          </div></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== IDENTITY ===== -->
+    <section class="container cs-section">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(Identity)</p>
+          <h3 class="cs-h2">Green Tunisia Network</h3>
+          <p class="cs-body">The project was presented under the GTN emblem: a farmer framed by Tunisian ornament, in the greens of the fields and the reds and ochres of local tilework. The aim was to feel familiar and local, not like a generic tech app.</p>
+        </div>
+        <div class="cs-system__media" style="background:#fff">
+          <img src="../../images/projects/agrilink/gtn-emblem.jpg" alt="GTN - Green Tunisia Network emblem: a farmer in a green hat framed by Tunisian ornamental patterns" width="900" height="900" loading="lazy" style="width:min(100%,420px)" />
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Tech Stack)</p>
+        <h2 class="cs-h2">Built With</h2>
+        <p class="cs-body">A TypeScript app on Expo, using Firebase as the whole backend so the hackathon time went to the product.</p>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>React Native</b><span>Cross-platform UI</span></li>
+        <li><b>Expo</b><span>Camera, location &amp; tooling</span></li>
+        <li><b>TypeScript</b><span>Typed codebase</span></li>
+        <li><b>Firebase</b><span>Auth, Firestore &amp; Storage</span></li>
+        <li><b>Plant.id API</b><span>Disease diagnosis</span></li>
+        <li><b>Perenual API</b><span>Plant database</span></li>
+        <li><b>React Native Maps</b><span>Farmer map &amp; radius</span></li>
+        <li><b>React Native Paper</b><span>Material Design UI</span></li>
+      </ul>
+      <a class="cs-btn" href="https://github.com/mastouridhia/agrilink" target="_blank" rel="noopener noreferrer">View the code on GitHub <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../stayhub/">
+        <span class="cs-kicker">Next Project</span>
+        <span class="cs-next__title">StayHub <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

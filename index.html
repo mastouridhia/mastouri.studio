@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mastouri Dhia - Full-Stack Developer & AI · mastouri's studio</title>
+  <meta name="description" content="The portfolio of Mastouri Dhia, full-stack developer and AI enthusiast: building practical digital products and exploring the intersection of technology and creativity." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://your-domain.com/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:title" content="Mastouri Dhia - Full-Stack Developer & AI" />
+  <meta property="og:description" content="The portfolio of Mastouri Dhia, full-stack developer and AI enthusiast: building practical digital products and exploring the intersection of technology and creativity." />
+  <meta property="og:image" content="https://your-domain.com/images/social/home.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mastouri Dhia, Full-Stack Developer & AI Engineer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/home.jpg" />
+
+  <!-- Local fonts -->
+  <link rel="preload" href="fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Back from the Outside page: open on its cream wash (see styles.css) -->
+  <script>
+    try { if (sessionStorage.getItem("otf-return") === "1") { sessionStorage.removeItem("otf-return"); document.documentElement.classList.add("from-upside"); } } catch (e) {}
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Intro loader (MASTOURI) ===== -->
+  <div class="intro-loader" data-intro>
+    <div class="intro-word">
+      <span class="intro-side intro-side--left">
+        <span class="intro-letter" style="--i:0">M</span>
+        <span class="intro-letter" style="--i:1">A</span>
+        <span class="intro-letter" style="--i:2">S</span>
+        <span class="intro-letter" style="--i:3">T</span>
+      </span>
+      <span class="intro-chip" data-intro-chip>
+        <img src="images/intro/intro-1.webp" alt="" class="intro-chip-img" data-intro-img />
+      </span>
+      <span class="intro-side intro-side--right">
+        <span class="intro-letter" style="--i:4">O</span>
+        <span class="intro-letter" style="--i:5">U</span>
+        <span class="intro-letter" style="--i:6">R</span>
+        <span class="intro-letter" style="--i:7">I</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="#top" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section id="top" class="hero">
+      <div class="container hero-inner">
+        <!-- Portrait (desktop, positioned right) -->
+        <div class="hero-portrait hero-portrait--desktop" data-hero-portrait>
+          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" />
+        </div>
+
+        <!-- Portrait (mobile) -->
+        <div class="hero-portrait hero-portrait--mobile">
+          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" />
+        </div>
+
+
+<!-- Hero text -->
+<div class="hero-content" data-hero-content>
+  <h1 class="hero-name">
+    <span class="hero-name-line" data-parallax-line="1">
+      Mastouri
+    </span>
+    <span class="hero-name-line" data-parallax-line="2">Dhia</span>
+  </h1>
+
+  <p class="hero-tagline">
+    <span>Ideas, code & everything in between.</span>
+    <span>Breaking limits.</span>
+  </p>
+
+  <ul class="hero-skills">
+    <li>Full-Stack Development</li>
+    <li>Artificial Intelligence</li>
+    <li>Backend &amp; APIs</li>
+    <li>Automation</li>
+    <li>Problem Solving</li>
+  </ul>
+</div>
+</div>
+<div class="container"><div class="rule"></div></div>
+</section>
+
+
+    <!-- ===== STUDIO / ABOUT ===== -->
+ 
+<section id="studio" class="studio">
+  <div class="container">
+    <div class="studio-wave-stage" data-wave-track>
+      <div class="studio-wave-content">
+        <p class="studio-lead" data-wave>
+        <span class="studio-float" aria-hidden="true">
+          <span class="studio-float-inner">
+            <img src="images/about-float-baby.jpg" alt="" data-reveal-img />
+          </span>
+        </span>
+
+<span class="wave-words">
+  <span class="wave-word">I'm</span>
+  <span class="wave-word">Dhia</span>
+  <span class="wave-word">Mastouri,</span>
+  <span class="wave-word">a</span>
+  <span class="wave-word">Full-Stack</span>
+  <span class="wave-word">Developer</span>
+  <span class="wave-word">building</span>
+  <span class="wave-word">toward</span>
+  <span class="wave-word">a</span>
+  <span class="wave-word">future</span>
+  <span class="wave-word">in</span>
+  <span class="wave-word">AI</span>
+  <span class="wave-word">engineering.</span>
+  <span class="wave-word">I</span>
+  <span class="wave-word">create</span>
+  <span class="wave-word">web</span>
+  <span class="wave-word">applications,</span>
+  <span class="wave-word">build</span>
+  <span class="wave-word">reliable</span>
+  <span class="wave-word">systems,</span>
+  <span class="wave-word">and</span>
+  <span class="wave-word">explore</span>
+  <span class="wave-word">how</span>
+  <span class="wave-word">AI</span>
+  <span class="wave-word">can</span>
+  <span class="wave-word">make</span>
+  <span class="wave-word">software</span>
+  <span class="wave-word">smarter.</span>
+  <span class="wave-word">I</span>
+  <span class="wave-word">enjoy</span>
+  <span class="wave-word">working</span>
+  <span class="wave-word">with</span>
+  <span class="wave-word">APIs,</span>
+  <span class="wave-word">databases,</span>
+  <span class="wave-word">and</span>
+  <span class="wave-word">intelligent</span>
+  <span class="wave-word">tools</span>
+  <span class="wave-word">to</span>
+  <span class="wave-word">turn</span>
+  <span class="wave-word">ideas</span>
+  <span class="wave-word">into</span>
+  <span class="wave-word">useful</span>
+  <span class="wave-word">digital</span>
+  <span class="wave-word">experiences.</span>
+  <span class="wave-word">driven</span>
+  <span class="wave-word">by</span>
+  <span class="wave-word">curiosity</span>
+  <span class="wave-word">and</span>
+  <span class="wave-word">the</span>
+  <span class="wave-word">possibilities</span>
+  <span class="wave-word">of</span>
+  <span class="wave-word">technology.</span>
+  <span class="wave-word">Somewhere</span>
+  <span class="wave-word">between</span>
+  <span class="wave-word">code</span>
+  <span class="wave-word">and</span>
+  <span class="wave-word">intelligence,</span>
+  <span class="wave-word">I'm</span>
+  <span class="wave-word">building</span>
+  <span class="wave-word">what's</span>
+  <span class="wave-word">next.</span>
+</span>
+          <div class="rule studio-rule"></div>
+
+          <div class="studio-bottom">
+            <div class="studio-reel">
+              <video
+                poster="videos/showreel/showreel-9s-poster.webp"
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-label="Software development and AI showcase"
+              >
+                <source src="videos/showreel/showreel-9s.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="studio-clients">
+              <p class="section-label">(TECHNOLOGIES &amp; INTERESTS)</p>
+              <div class="marquee studio-marquee" aria-label="Technologies: TypeScript, React, Vite, React Native, Expo, Firebase, Clerk, WordPress, Vitest, Playwright, Postman">
+                <div class="marquee-track">
+                  <div class="marquee-group">
+                      <span class="tech-wordmark tech-wordmark--typescript"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/typescript.svg); mask-image: url(images/tech/typescript.svg)" aria-hidden="true"></span>TypeScript</span>
+                      <span class="tech-wordmark tech-wordmark--react"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/react.svg); mask-image: url(images/tech/react.svg)" aria-hidden="true"></span>React</span>
+                      <span class="tech-wordmark tech-wordmark--vite"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/vite.svg); mask-image: url(images/tech/vite.svg)" aria-hidden="true"></span>Vite</span>
+                      <span class="tech-wordmark tech-wordmark--react-native"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/react.svg); mask-image: url(images/tech/react.svg)" aria-hidden="true"></span>React Native</span>
+                      <span class="tech-wordmark tech-wordmark--expo"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/expo.svg); mask-image: url(images/tech/expo.svg)" aria-hidden="true"></span>Expo</span>
+                      <span class="tech-wordmark tech-wordmark--firebase"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/firebase.svg); mask-image: url(images/tech/firebase.svg)" aria-hidden="true"></span>Firebase</span>
+                      <span class="tech-wordmark tech-wordmark--clerk"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/clerk.svg); mask-image: url(images/tech/clerk.svg)" aria-hidden="true"></span>Clerk</span>
+                      <span class="tech-wordmark tech-wordmark--wordpress"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/wordpress.svg); mask-image: url(images/tech/wordpress.svg)" aria-hidden="true"></span>WordPress</span>
+                      <span class="tech-wordmark tech-wordmark--vitest"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/vitest.svg); mask-image: url(images/tech/vitest.svg)" aria-hidden="true"></span>Vitest</span>
+                      <span class="tech-wordmark tech-wordmark--playwright"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/playwright.svg); mask-image: url(images/tech/playwright.svg)" aria-hidden="true"></span>Playwright</span>
+                      <span class="tech-wordmark tech-wordmark--postman"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/postman.svg); mask-image: url(images/tech/postman.svg)" aria-hidden="true"></span>Postman</span>
+                  </div>
+                  <div class="marquee-group" aria-hidden="true">
+                      <span class="tech-wordmark tech-wordmark--typescript"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/typescript.svg); mask-image: url(images/tech/typescript.svg)" aria-hidden="true"></span>TypeScript</span>
+                      <span class="tech-wordmark tech-wordmark--react"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/react.svg); mask-image: url(images/tech/react.svg)" aria-hidden="true"></span>React</span>
+                      <span class="tech-wordmark tech-wordmark--vite"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/vite.svg); mask-image: url(images/tech/vite.svg)" aria-hidden="true"></span>Vite</span>
+                      <span class="tech-wordmark tech-wordmark--react-native"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/react.svg); mask-image: url(images/tech/react.svg)" aria-hidden="true"></span>React Native</span>
+                      <span class="tech-wordmark tech-wordmark--expo"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/expo.svg); mask-image: url(images/tech/expo.svg)" aria-hidden="true"></span>Expo</span>
+                      <span class="tech-wordmark tech-wordmark--firebase"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/firebase.svg); mask-image: url(images/tech/firebase.svg)" aria-hidden="true"></span>Firebase</span>
+                      <span class="tech-wordmark tech-wordmark--clerk"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/clerk.svg); mask-image: url(images/tech/clerk.svg)" aria-hidden="true"></span>Clerk</span>
+                      <span class="tech-wordmark tech-wordmark--wordpress"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/wordpress.svg); mask-image: url(images/tech/wordpress.svg)" aria-hidden="true"></span>WordPress</span>
+                      <span class="tech-wordmark tech-wordmark--vitest"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/vitest.svg); mask-image: url(images/tech/vitest.svg)" aria-hidden="true"></span>Vitest</span>
+                      <span class="tech-wordmark tech-wordmark--playwright"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/playwright.svg); mask-image: url(images/tech/playwright.svg)" aria-hidden="true"></span>Playwright</span>
+                      <span class="tech-wordmark tech-wordmark--postman"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/postman.svg); mask-image: url(images/tech/postman.svg)" aria-hidden="true"></span>Postman</span>
+                  </div>
+                </div>
+              </div>
+              <div class="marquee studio-marquee studio-marquee--reverse" aria-label="Technologies and interests: Node.js, Express, Socket.io, PostgreSQL, Drizzle, Redis, Docker, nginx, Linux, AI, Cybersecurity">
+                <div class="marquee-track">
+                  <div class="marquee-group">
+                      <span class="tech-wordmark tech-wordmark--node"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/nodedotjs.svg); mask-image: url(images/tech/nodedotjs.svg)" aria-hidden="true"></span>Node.js</span>
+                      <span class="tech-wordmark tech-wordmark--express"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/express.svg); mask-image: url(images/tech/express.svg)" aria-hidden="true"></span>Express</span>
+                      <span class="tech-wordmark tech-wordmark--socket"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/socketdotio.svg); mask-image: url(images/tech/socketdotio.svg)" aria-hidden="true"></span>Socket.io</span>
+                      <span class="tech-wordmark tech-wordmark--postgres"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/postgresql.svg); mask-image: url(images/tech/postgresql.svg)" aria-hidden="true"></span>PostgreSQL</span>
+                      <span class="tech-wordmark tech-wordmark--drizzle"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/drizzle.svg); mask-image: url(images/tech/drizzle.svg)" aria-hidden="true"></span>Drizzle</span>
+                      <span class="tech-wordmark tech-wordmark--redis"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/redis.svg); mask-image: url(images/tech/redis.svg)" aria-hidden="true"></span>Redis</span>
+                      <span class="tech-wordmark tech-wordmark--docker"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/docker.svg); mask-image: url(images/tech/docker.svg)" aria-hidden="true"></span>Docker</span>
+                      <span class="tech-wordmark tech-wordmark--nginx"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/nginx.svg); mask-image: url(images/tech/nginx.svg)" aria-hidden="true"></span>nginx</span>
+                      <span class="tech-wordmark tech-wordmark--linux"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/linux.svg); mask-image: url(images/tech/linux.svg)" aria-hidden="true"></span>Linux</span>
+                      <span class="tech-wordmark tech-wordmark--ai"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/ai.svg); mask-image: url(images/tech/ai.svg)" aria-hidden="true"></span>AI</span>
+                      <span class="tech-wordmark tech-wordmark--security"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/security.svg); mask-image: url(images/tech/security.svg)" aria-hidden="true"></span>Cybersecurity</span>
+                  </div>
+                  <div class="marquee-group" aria-hidden="true">
+                      <span class="tech-wordmark tech-wordmark--node"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/nodedotjs.svg); mask-image: url(images/tech/nodedotjs.svg)" aria-hidden="true"></span>Node.js</span>
+                      <span class="tech-wordmark tech-wordmark--express"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/express.svg); mask-image: url(images/tech/express.svg)" aria-hidden="true"></span>Express</span>
+                      <span class="tech-wordmark tech-wordmark--socket"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/socketdotio.svg); mask-image: url(images/tech/socketdotio.svg)" aria-hidden="true"></span>Socket.io</span>
+                      <span class="tech-wordmark tech-wordmark--postgres"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/postgresql.svg); mask-image: url(images/tech/postgresql.svg)" aria-hidden="true"></span>PostgreSQL</span>
+                      <span class="tech-wordmark tech-wordmark--drizzle"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/drizzle.svg); mask-image: url(images/tech/drizzle.svg)" aria-hidden="true"></span>Drizzle</span>
+                      <span class="tech-wordmark tech-wordmark--redis"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/redis.svg); mask-image: url(images/tech/redis.svg)" aria-hidden="true"></span>Redis</span>
+                      <span class="tech-wordmark tech-wordmark--docker"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/docker.svg); mask-image: url(images/tech/docker.svg)" aria-hidden="true"></span>Docker</span>
+                      <span class="tech-wordmark tech-wordmark--nginx"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/nginx.svg); mask-image: url(images/tech/nginx.svg)" aria-hidden="true"></span>nginx</span>
+                      <span class="tech-wordmark tech-wordmark--linux"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/linux.svg); mask-image: url(images/tech/linux.svg)" aria-hidden="true"></span>Linux</span>
+                      <span class="tech-wordmark tech-wordmark--ai"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/ai.svg); mask-image: url(images/tech/ai.svg)" aria-hidden="true"></span>AI</span>
+                      <span class="tech-wordmark tech-wordmark--security"><span class="tech-logo" style="-webkit-mask-image: url(images/tech/security.svg); mask-image: url(images/tech/security.svg)" aria-hidden="true"></span>Cybersecurity</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="xp" aria-labelledby="xp-heading">
+      <div class="container">
+        <header class="section-head xp-head">
+          <p class="section-label">(WHERE I'VE WORKED)</p>
+          <h2 class="xp-heading" id="xp-heading">Experience</h2>
+        </header>
+        <div class="xp-rule" aria-hidden="true"></div>
+
+        <article class="xp-role">
+          <div class="xp-role__when">
+            <span class="xp-role__period">Dec 2025 – Present</span>
+            <span class="xp-role__status"><span class="xp-dot" aria-hidden="true"></span>Current role</span>
+          </div>
+
+          <div class="xp-role__main">
+            <div class="xp-role__head">
+              <h3 class="xp-role__company">360dmmc</h3>
+              <p class="xp-role__title">AI Engineer</p>
+            </div>
+            <p class="xp-role__summary">
+              I work on <strong>FreshStockAI</strong>, the company's AI inventory and food-safety platform for
+              restaurants. I build across the stack: the TypeScript API and PostgreSQL schema, and the React Native
+              app that kitchen staff use during service.
+            </p>
+            <ul class="xp-role__points">
+              <li>Built 40+ API endpoints, including dashboards, margin alerts, FDA FSMA 204 compliance scoring and AI daily recommendations.</li>
+              <li>Built the mobile purchase-order flow, from creating an order to receiving it into inventory.</li>
+              <li>Set up the camera, offline storage and frame-processing groundwork for Flash Audit, an AI shelf-counting feature.</li>
+              <li>Added scheduled expiry checks, push notifications and real-time updates over WebSockets.</li>
+              <li>Set up <strong>360 E-Sign</strong> on my own, the company's internal e-signature tool: a self-hosted fork of DocuSeal on a VPS, with production Docker config, Postgres backup/restore and health-check scripts, and email-deliverability testing.</li>
+            </ul>
+            <ul class="xp-role__stack" aria-label="Technologies used">
+              <li>TypeScript</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+              <li>Drizzle ORM</li>
+              <li>React Native</li>
+              <li>WatermelonDB</li>
+              <li>Firebase</li>
+              <li>WebSockets</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+
+          <a class="xp-case" href="work/freshstockai/" aria-label="FreshStockAI case study">
+            <span class="xp-case__media">
+              <img class="xp-case__logo" src="images/projects/freshstockai/freshstockai-logo.png" alt="" width="307" height="308" />
+              <img class="xp-case__screen" src="images/projects/freshstockai/screens/dashboard.webp" alt="" width="786" height="1704" />
+              <img class="xp-case__screen" src="images/projects/freshstockai/screens/audit.webp" alt="" width="786" height="1704" />
+            </span>
+            <span class="xp-case__body">
+              <span class="xp-case__label">Case Study</span>
+              <span class="xp-case__title">FreshStockAI</span>
+              <span class="xp-case__stats">41 tasks shipped · 40+ endpoints</span>
+              <span class="xp-case__cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </span>
+          </a>
+        </article>
+
+        <article class="xp-role">
+          <div class="xp-role__when">
+            <span class="xp-role__period">Jan 2026</span>
+            <span class="xp-role__status">Internship</span>
+          </div>
+
+          <div class="xp-role__main">
+            <div class="xp-role__head">
+              <h3 class="xp-role__company">Value</h3>
+              <p class="xp-role__title">Cybersecurity Intern</p>
+            </div>
+            <p class="xp-role__summary">
+              The IT team was checking logs machine by machine. I rolled out <strong>Wazuh</strong>, an open-source
+              SIEM, to give them one live view of threats across their Windows and Linux machines.
+            </p>
+            <ul class="xp-role__points">
+              <li>Scoped and designed the monitoring setup, from requirements to architecture.</li>
+              <li>Brought a central security server online and connected Windows, CentOS and Ubuntu machines to it.</li>
+              <li>Validated it end to end: 4/4 checks passed, from agent connection to real-time alerts.</li>
+            </ul>
+            <ul class="xp-role__stack" aria-label="Technologies used">
+              <li>Wazuh</li>
+              <li>SIEM</li>
+              <li>Linux</li>
+              <li>Windows</li>
+              <li>Virtualization</li>
+            </ul>
+          </div>
+
+          <a class="xp-case xp-case--value" href="work/value/" aria-label="Value case study">
+            <span class="xp-case__media">
+              <img class="xp-case__logo" src="images/projects/value/value-logo.png" alt="" width="467" height="113" />
+              <img class="xp-case__screen xp-case__screen--wide" src="images/projects/value/dashboard.webp" alt="" width="2800" height="1260" />
+            </span>
+            <span class="xp-case__body">
+              <span class="xp-case__label">Case Study</span>
+              <span class="xp-case__title">Wazuh at Value</span>
+              <span class="xp-case__stats">3 OS monitored · 4/4 checks passed</span>
+              <span class="xp-case__cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </span>
+          </a>
+        </article>
+
+        <article class="xp-role">
+          <div class="xp-role__when">
+            <span class="xp-role__period">Jan 2024</span>
+            <span class="xp-role__status">First internship</span>
+          </div>
+
+          <div class="xp-role__main">
+            <div class="xp-role__head">
+              <h3 class="xp-role__company">ATEJ</h3>
+              <p class="xp-role__title">Web Developer Intern</p>
+            </div>
+            <p class="xp-role__summary">
+              I built the organization's website, <a href="https://atej.tn" target="_blank" rel="noopener"><strong>atej.tn</strong></a>,
+              with WordPress. It was my first internship and my first site shipped for a real client.
+            </p>
+            <ul class="xp-role__stack" aria-label="Technologies used">
+              <li>WordPress</li>
+            </ul>
+          </div>
+
+          <a class="xp-case xp-case--atej" href="work/atej/" aria-label="ATEJ case study">
+            <span class="xp-case__media">
+              <img class="xp-case__logo" src="images/projects/atej/atej-logo.png" alt="" width="1024" height="497" />
+              <img class="xp-case__screen xp-case__screen--wide" src="images/projects/atej/home.webp" alt="" width="1440" height="900" />
+              <img class="xp-case__screen" src="images/projects/atej/home-mobile.webp" alt="" width="390" height="844" />
+            </span>
+            <span class="xp-case__body">
+              <span class="xp-case__label">Case Study</span>
+              <span class="xp-case__title">atej.tn</span>
+              <span class="xp-case__stats">WordPress · live site</span>
+              <span class="xp-case__cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SELECTED PROJECTS ===== -->
+    <section id="projects" class="projects has-active-project" aria-labelledby="projects-heading">
+      <div class="container projects__inner">
+        <h2 class="projects__heading" id="projects-heading">Selected Projects</h2>
+        <div class="projects__rule" aria-hidden="true"></div>
+
+        <a class="project-card is-active" href="work/orvexa/" aria-label="Orvexa - QR restaurant ordering and operations platform case study">
+          <div class="project-card__copy">
+            <div class="project-card__topline">
+              <h2 class="project-card__title" data-wave>Orvexa</h2>
+              <span class="project-card__button">View Project <span class="project-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </div>
+            <dl class="project-card__details">
+              <div class="project-card__detail"><dt>Role</dt><dd>Product, Design &amp; Full-Stack</dd></div>
+              <div class="project-card__detail"><dt>Timeline</dt><dd>4 Months</dd></div>
+              <div class="project-card__detail"><dt>Year</dt><dd>2025–2026</dd></div>
+              <div class="project-card__detail"><dt>Team</dt><dd>Solo</dd></div>
+            </dl>
+          </div>
+          <div class="project-card__media project-card__media--mark" style="--project-bg: #d97a2c">
+            <img class="project-card__image project-card__image--mark" src="images/projects/orvexa/orvexa-mark.svg" alt="Orvexa logo" width="100" height="100">
+            <span class="project-card__overlay" aria-hidden="true"><span class="project-card__tags"><span class="project-card__tag">Orvexa</span><span class="project-card__tag">Realtime</span><span class="project-card__tag">SaaS</span><span class="project-card__tag">Flagship</span></span></span>
+          </div>
+        </a>
+
+        <a class="project-card" href="work/agrilink/" aria-label="AgriLink - Farmer network and plant diagnosis app case study, hackathon 2nd place">
+          <div class="project-card__copy">
+            <div class="project-card__topline">
+              <h2 class="project-card__title" data-wave>AgriLink</h2>
+              <span class="project-card__button">View Project <span class="project-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </div>
+            <dl class="project-card__details">
+              <div class="project-card__detail"><dt>Role</dt><dd>Mobile App Design &amp; Development</dd></div>
+              <div class="project-card__detail"><dt>Result</dt><dd>Hackathon · 2nd Place</dd></div>
+              <div class="project-card__detail"><dt>Year</dt><dd>2025</dd></div>
+              <div class="project-card__detail"><dt>Stack</dt><dd>React Native · Expo · Firebase</dd></div>
+            </dl>
+          </div>
+          <div class="project-card__media project-card__media--mark" style="--project-bg: #2e7d32">
+            <img class="project-card__image project-card__image--mark" src="images/projects/agrilink/agrilink-mark.svg" alt="AgriLink logo" width="100" height="100">
+            <span class="project-card__overlay" aria-hidden="true"><span class="project-card__tags"><span class="project-card__tag">AgriLink</span><span class="project-card__tag">AI Diagnosis</span><span class="project-card__tag">Maps</span><span class="project-card__tag">2nd Place</span></span></span>
+          </div>
+        </a>
+
+        <a class="project-card" href="work/stayhub/" aria-label="StayHub - Mobile property booking app case study">
+          <div class="project-card__copy">
+            <div class="project-card__topline">
+              <h2 class="project-card__title" data-wave>StayHub</h2>
+              <span class="project-card__button">View Project <span class="project-card__arrow" aria-hidden="true">&rarr;</span></span>
+            </div>
+            <dl class="project-card__details">
+              <div class="project-card__detail"><dt>Role</dt><dd>Mobile App Design &amp; Development</dd></div>
+              <div class="project-card__detail"><dt>Stack</dt><dd>React Native · Expo · TypeScript</dd></div>
+              <div class="project-card__detail"><dt>Year</dt><dd>2025</dd></div>
+              <div class="project-card__detail"><dt>Team</dt><dd>Solo</dd></div>
+            </dl>
+          </div>
+          <div class="project-card__media project-card__media--mark" style="--project-bg: #e0475f">
+            <img class="project-card__image project-card__image--mark" src="images/projects/stayhub/stayhub-mark.svg" alt="StayHub logo" width="100" height="100">
+            <span class="project-card__overlay" aria-hidden="true"><span class="project-card__tags"><span class="project-card__tag">StayHub</span><span class="project-card__tag">Mobile App</span><span class="project-card__tag">Maps &amp; Booking</span><span class="project-card__tag">Clerk Auth</span></span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <!-- One <li> per certificate. data-preview (optional) = image shown next to the cursor on hover. -->
+    <section id="certificates" class="certs" aria-labelledby="certs-heading">
+      <div class="container">
+        <header class="certs-head">
+          <p class="section-label">(LEARNING NEVER STOPS)</p>
+          <h2 class="certs-heading" id="certs-heading">Certificates</h2>
+        </header>
+        <div class="certs-rule" aria-hidden="true"></div>
+
+        <ul class="certs-list" data-certs>
+          <li class="cert" data-preview="images/certificates/n8n-level-1.svg">
+            <div class="cert__row">
+              <span class="cert__n">01</span>
+              <span class="cert__title">n8n Course · Level 1</span>
+              <span class="cert__blurb"><span class="cert__issuer">n8n · Workflow Automation</span>Building automations from scratch: triggers, nodes, credentials and working with data between apps and APIs.</span>
+            </div>
+            <span class="cert__rule" aria-hidden="true"></span>
+          </li>
+          <li class="cert" data-preview="images/certificates/n8n-level-2.svg">
+            <div class="cert__row">
+              <span class="cert__n">02</span>
+              <span class="cert__title">n8n Course · Level 2</span>
+              <span class="cert__blurb"><span class="cert__issuer">n8n · Workflow Automation</span>Production-grade workflows: data structures, merging and splitting data, error handling and sub-workflows.</span>
+            </div>
+            <span class="cert__rule" aria-hidden="true"></span>
+          </li>
+          <li class="cert" data-preview="images/certificates/elife-ai-training.svg">
+            <div class="cert__row">
+              <span class="cert__n">03</span>
+              <span class="cert__title">Introduction to AI</span>
+              <span class="cert__blurb"><span class="cert__issuer">Centre Elife Sidi Bouzid · Certificate pending</span>Hands-on training on using AI day to day, to boost job search and employability, and to build a freelance or business career.</span>
+            </div>
+            <span class="cert__rule" aria-hidden="true"></span>
+          </li>
+          <li class="cert" data-preview="images/certificates/injaz-innovation-camp-card.jpg">
+            <div class="cert__row">
+              <span class="cert__n">04</span>
+              <span class="cert__title">Innovation Camp</span>
+              <span class="cert__blurb"><span class="cert__issuer">INJAZ Tunisia · JA Worldwide</span>Team challenge: turning a real-world problem into a business idea and pitching the solution to a jury.</span>
+            </div>
+            <span class="cert__rule" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+      <div class="certs-preview" data-certs-preview aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== SOUND GATE ===== -->
+    <!-- Browsers keep a page silent until the visitor clicks, so ask here,
+         just before the mirror. Shown by js/main.js (18); same switch as
+         the sound button inside the section. -->
+    <section class="otf-gate" aria-label="Sound for the next section" data-otf-gate hidden>
+      <div class="container otf-gate__inner">
+        <p class="section-label otf-gate__label">(Before you step in)</p>
+        <p class="otf-gate__title">The next part has <span class="otf-gate__neon">sound</span></p>
+        <p class="otf-gate__text" data-otf-gate-text>Turn it on for the full experience. Headphones recommended.</p>
+        <div class="otf-gate__actions">
+          <button class="otf-gate__on" type="button" aria-pressed="false" data-otf-gate-on>
+            <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span data-otf-gate-label>Turn sound on</span>
+          </button>
+          <button class="otf-gate__off" type="button" data-otf-gate-off>Continue without sound</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OUTSIDE THE FRAME ===== -->
+    <!-- A black mirror. Scrolling pins the stage, a web of cracks spreads
+         one crack at a time, then the glass breaks once (it stays broken
+         until the page is reloaded), red light leaks
+         through the cracks, the title ignites and "Step inside" dissolves
+         everything into red, into the Outside page. All drawing is in js/main.js (18).
+         Song: put an mp3 at audio/outside-theme.mp3 (or change data-otf-song).
+         Crack: the hit in data-otf-fx plays when the glass breaks.
+         Look: the painted vines, tissue and glass are in data-otf-tex.
+         Second take, picked at random on load (.otf--rift): a photograph
+         of a burning tear in the ground (images/otf/rift-close.webp) that
+         heats up with the scroll, erupts, and dives you into its core.
+         ?take=rift or ?take=mirror in the URL forces one. -->
+    <section id="outside" class="otf" data-otf data-otf-song="audio/outside-theme.mp3" data-otf-fx="audio/black-mirror.mp3" data-otf-tex="images/otf/">
+      <div class="otf-stage" data-otf-stage>
+        <div class="otf-scene" data-otf-scene>
+          <div class="otf-world" aria-hidden="true"></div>
+          <div class="otf-glass" aria-hidden="true"></div>
+          <!-- The rift only: the tear at full heat, its glow, and the speed smear of the dive -->
+          <div class="otf-heat" aria-hidden="true"></div>
+          <div class="otf-bloom" aria-hidden="true"></div>
+          <div class="otf-smear" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="otf-sheen" aria-hidden="true"></div>
+          <canvas class="otf-cracks" aria-hidden="true" data-otf-cracks></canvas>
+          <div class="otf-glow" aria-hidden="true"><canvas data-otf-glow></canvas></div>
+          <canvas class="otf-shards" aria-hidden="true" data-otf-shards></canvas>
+          <div class="otf-glitch" aria-hidden="true" data-otf-glitch></div>
+          <canvas class="otf-fx" aria-hidden="true" data-otf-fx></canvas>
+
+          <div class="otf-copy">
+            <p class="section-label otf-label">(PERSONAL · MY SPACE)</p>
+            <h2 class="otf-title" aria-label="Outside the Frame" data-otf-title>Outside the Frame</h2>
+          </div>
+          <!-- The red hole in the glass is the way in: it beats like a heart -->
+          <a class="otf-cta" href="outside/" aria-label="Step inside: the Outside the Frame page" data-otf-cta></a>
+        </div>
+
+        <div class="otf-grain" aria-hidden="true"></div>
+        <div class="otf-scan" aria-hidden="true"></div>
+        <div class="otf-vignette" aria-hidden="true"></div>
+        <div class="otf-flash" aria-hidden="true"></div>
+        <button class="otf-sound" type="button" aria-pressed="false" data-otf-sound hidden>
+          <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span data-otf-sound-label>Tap for sound</span>
+        </button>
+      </div>
+      <div class="otf-portal" aria-hidden="true" data-otf-portal></div>
+    </section>
+
+<!-- ===== CONTACT FORM ===== -->
+<section id="contact-form" class="contact">
+  <div class="container contact-inner">
+    <p class="section-label contact-label">
+      (LET'S BUILD SOMETHING)
+    </p>
+
+    <h2 class="contact-title"> What’s next ?    
+    </h2>
+
+    <p class="contact-direct">
+      <span>Or reach me directly:</span>
+      <a href="mailto:contactmastourid@gmail.com">
+        contactmastourid@gmail.com
+      </a>
+    </p>
+
+    <form class="contact-form" data-contact-form>
+      <!-- Web3Forms access key (delivers submissions to contactmastourid@gmail.com) -->
+      <input type="hidden" name="access_key" value="dbaef611-6465-4654-ae56-7bb57d946d82" />
+      <input type="hidden" name="subject" value="New message from your portfolio" />
+      <input type="hidden" name="from_name" value="Mastouri Studio portfolio" />
+      <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div class="form-row">
+        <div class="form-field">
+          <label for="lead-name">Name</label>
+          <input
+            type="text"
+            id="lead-name"
+            name="name"
+            autocomplete="name"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="lead-email">Email</label>
+          <input
+            type="email"
+            id="lead-email"
+            name="email"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="lead-reason">I'm interested in...</label>
+          <select id="lead-reason" name="reason" required>
+            <option value="" disabled selected>
+              Select an option
+            </option>
+            <option value="ai-engineering">
+              AI Engineering / Machine Learning
+            </option>
+            <option value="ai-integration">
+              AI Integration / Automation
+            </option>
+            <option value="fullstack">
+              Full-Stack Development
+            </option>
+            <option value="freelance">
+              Freelance Project
+            </option>
+            <option value="job">
+              Job Opportunity
+            </option>
+            <option value="collaboration">
+              Collaboration
+            </option>
+            <option value="other">
+              Other
+            </option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="lead-company">Company (optional)</label>
+          <input
+            type="text"
+            id="lead-company"
+            name="company"
+            autocomplete="organization"
+            placeholder="Company or organization"
+          />
+        </div>
+      </div>
+
+          <div class="form-field form-field--wide">
+            <label for="lead-message">Message</label>
+            <textarea id="lead-message" name="message" rows="3" placeholder="Tell me about your project, idea, or opportunity..." required></textarea>
+          </div>
+
+      <div class="form-actions">
+        <button
+          type="submit"
+          class="btn btn--invert"
+          data-hw
+        >
+          <span class="hw-text" data-hw-text>
+            Send Message ↗
+          </span>
+        </button>
+
+        <p class="form-note" data-form-note>
+          Open to software projects, AI opportunities, and meaningful collaborations.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="#top" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

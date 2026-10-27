@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- StayHub, "Home Pin". Ink #1C1215 · Paper #FBEED9 · Accent #E0475F · Tile #E0475F -->
+  <title>StayHub</title>
+  <circle cx="50" cy="50" r="50" fill="#1C1215"/>
+  <path d="M50 82C44 70 26 58 26 42A24 24 0 0 1 74 42C74 58 56 70 50 82Z" fill="#FBEED9"/>
+  <path d="M50 29L62 40V53H38V40Z" fill="#E0475F"/>
+</svg>

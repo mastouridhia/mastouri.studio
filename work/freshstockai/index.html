@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshStockAI - Case Study · mastouri's studio</title>
+  <meta name="description" content="FreshStockAI at 360dmmc: an AI inventory and food-safety platform for restaurants. Mastouri Dhia's work as AI Engineer across the TypeScript API, PostgreSQL schema and React Native app." />
+  <link rel="icon" type="image/png" href="../../images/projects/freshstockai/freshstockai-logo.png" />
+  <link rel="canonical" href="https://your-domain.com/work/freshstockai/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/freshstockai/" />
+  <meta property="og:title" content="FreshStockAI - Case Study" />
+  <meta property="og:description" content="FreshStockAI at 360dmmc: an AI inventory and food-safety platform for restaurants. Mastouri Dhia's work as AI Engineer across the TypeScript API, PostgreSQL schema and React Native app." />
+  <meta property="og:image" content="https://your-domain.com/images/social/freshstockai.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/freshstockai.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+  <style>
+    /* Brand colors from the app's theme (mobile/src/theme): pink #E84471, green #21B495, blue #6A5ACD */
+    .case-study--freshstockai {
+      --cs-brand: #e84471;
+      --cs-film-bg: #17111a;
+    }
+    .case-study--freshstockai .cs-title {
+      font-size: clamp(2.5rem, 9.5vw, 9rem);
+      overflow-wrap: anywhere;
+    }
+    .case-study--freshstockai .cs-film::before {
+      background: radial-gradient(closest-side, rgba(232, 68, 113, .38), transparent);
+    }
+    .case-study--freshstockai .cs-film::after {
+      background: radial-gradient(closest-side, rgba(33, 180, 149, .26), transparent);
+    }
+    .case-study--freshstockai .cs-live-dot {
+      background: #21b495;
+      box-shadow: 0 0 0 0 rgba(33, 180, 149, .6);
+    }
+    .case-study--freshstockai .cs-film .device--phone:nth-child(2) { transform: translateY(-1.5rem); }
+    /* Screens sit on a soft brand panel inside each system row */
+    .case-study--freshstockai .cs-system__media {
+      background: linear-gradient(160deg, #fdf2f5 0%, #f9c9d7 100%);
+      padding-block: clamp(2rem, 4vw, 3rem);
+    }
+    .case-study--freshstockai .cs-system__media--green { background: linear-gradient(160deg, #ecfdf8 0%, #a7f3d5 100%); }
+    .case-study--freshstockai .cs-system__media--dark { background: #17111a; }
+    .case-study--freshstockai .cs-system__media .device--phone { box-shadow: 0 30px 60px rgba(125, 31, 59, .28), 0 0 0 1px rgba(0, 0, 0, .06); }
+    .case-study--freshstockai .cs-arch { background: #17111a; }
+    .case-study--freshstockai .cs-arch__node--hot {
+      border-color: rgba(232, 68, 113, .6);
+      background: rgba(232, 68, 113, .12);
+    }
+    .case-study--freshstockai .cs-arch__link { color: #f5a3b9; }
+    /* The web app leads with the brand purple (#6A5ACD) and purple-to-pink gradients */
+    .case-study--freshstockai .fs-film--web::before {
+      background: radial-gradient(closest-side, rgba(106, 90, 205, .45), transparent);
+    }
+    .case-study--freshstockai .fs-film--web::after {
+      background: radial-gradient(closest-side, rgba(232, 68, 113, .22), transparent);
+    }
+    .case-study--freshstockai .cs-gallery .device--browser { max-width: none; }
+    @media (max-width: 760px) {
+      .case-study--freshstockai .cs-film .device--phone:nth-child(2) { transform: none; }
+      .case-study--freshstockai .cs-film .device--phone:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body class="case-study case-study--freshstockai">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <img class="cs-brandmark" src="../../images/projects/freshstockai/freshstockai-logo.png" alt="FreshStockAI logo" width="307" height="308" />
+      <p class="cs-kicker">(Experience · 360dmmc)</p>
+      <h1 class="cs-title">FreshStockAI</h1>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>Backend &amp; APIs</li>
+        <li>Mobile App</li>
+        <li>Web Dashboard</li>
+        <li>Computer Vision</li>
+        <li>Food-Safety Compliance</li>
+        <li>Offline-first</li>
+      </ul>
+      <p class="cs-award">AI Engineer · Dec 2025 – Present</p>
+
+      <div class="cs-film" aria-label="Three FreshStockAI app screens: the dashboard, Flash Audit counting stock with the camera, and the purchase orders list">
+        <div class="device device--phone">
+          <img src="../../images/projects/freshstockai/screens/dashboard.webp" alt="Dashboard with the Do This Today list and stock stats" width="786" height="1704" />
+        </div>
+        <div class="device device--phone">
+          <img src="../../images/projects/freshstockai/screens/audit.webp" alt="Flash Audit: the camera detects strawberries, lemons, a pomegranate and avocados with confidence labels" width="786" height="1704" />
+        </div>
+        <div class="device device--phone">
+          <img src="../../images/projects/freshstockai/screens/orders.webp" alt="Purchase orders list with status filters and color-coded status badges" width="786" height="1704" />
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>React Native · Expo · offline-first</p>
+      </div>
+
+      <p class="cs-lead">
+        FreshStockAI is 360dmmc's AI inventory platform for restaurants. It tracks what's on the shelves,
+        what it costs, when it expires and whether each dish still makes money, and it keeps the records the
+        FDA's food-traceability rule requires. I joined the product team in December 2025 and build across
+        the stack, from the API and database to the mobile app.
+      </p>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>AI Engineer · Full-Stack</dd></div>
+        <div><dt>Company</dt><dd>360dmmc</dd></div>
+        <div><dt>Period</dt><dd>Dec 2025 – Present</dd></div>
+        <div><dt>Stack</dt><dd>TypeScript · PostgreSQL · React Native</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== ROLE / PROBLEM / TEAM / RESULT ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(My Role)</p>
+        <ul class="cs-list">
+          <li>Built and reshaped 40+ API endpoints: inventory, purchase orders, dashboards, margin alerts, compliance and settings.</li>
+          <li>Wrote the background services: expiry watchdog, AI daily recommendations and push notifications.</li>
+          <li>Built the purchase-order flow and the ingredient detail screen in the React Native app.</li>
+          <li>Set up the camera, offline storage and frame processing that Flash Audit runs on.</li>
+          <li>Worked on the foundations too: error handling, WebSockets, linting, tests and API docs.</li>
+        </ul>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Problem)</p>
+        <p class="cs-body">Restaurants run on thin margins. Ingredient prices change every week, produce spoils fast, and most kitchens still count stock with a clipboard. By the time someone notices a dish is losing money or a case of greens has expired, the money is already gone. New FDA traceability rules (FSMA 204) also mean records for high-risk foods have to be complete and easy to produce.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(How We Worked)</p>
+        <p class="cs-body">I work in a cross-functional product team with mobile, backend and product people. Work is planned in sprints from a PM spec. When the spec changes, the API has to change with it, because the frontend team builds against those exact paths.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Result)</p>
+        <p class="cs-body"><strong>41 tasks shipped</strong> between December 2025 and April 2026, from the first database migrations to the compliance features that went into the leadership demo. I'm still on the team.</p>
+      </div>
+    </section>
+
+    <!-- ===== SCOPE ===== -->
+    <section class="container cs-section--tight">
+      <div class="cs-scope cs-reveal">
+        <p class="cs-kicker">(Scope)</p>
+      </div>
+      <div class="cs-stats cs-stats--center cs-reveal">
+        <div><span class="cs-stat__num">41</span><span class="cs-stat__label">tasks shipped, backend and mobile</span></div>
+        <div><span class="cs-stat__num">40+</span><span class="cs-stat__label">API endpoints built or reshaped</span></div>
+        <div><span class="cs-stat__num">103+</span><span class="cs-stat__label">endpoints documented in the team's Postman collection</span></div>
+      </div>
+    </section>
+
+    <!-- ===== ARCHITECTURE ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Architecture)</p>
+        <h2 class="cs-h2 cs-h2--xl">Where My<br />Work Sits</h2>
+        <p class="cs-body">One TypeScript API serves the mobile app and the web dashboard. Most of my work was in the highlighted parts.</p>
+      </div>
+      <div class="cs-arch cs-reveal" role="img" aria-label="Architecture: the React Native app and web dashboard call one TypeScript API, which runs scheduled services and stores data in PostgreSQL, with Firebase for auth and push and WebSockets for live updates.">
+        <div class="cs-arch__row" style="--cols:2">
+          <div class="cs-arch__node cs-arch__node--hot"><b>Mobile app</b><span>React Native · Expo · WatermelonDB offline</span></div>
+          <div class="cs-arch__node"><b>Web dashboard</b><span>Built by the frontend team</span></div>
+        </div>
+        <div class="cs-arch__link">HTTPS + WebSocket ↓</div>
+        <div class="cs-arch__row" style="--cols:4">
+          <div class="cs-arch__node cs-arch__node--hot"><b>REST API</b><span>Auth middleware · org scoping</span></div>
+          <div class="cs-arch__node cs-arch__node--hot"><b>Watchdogs</b><span>Expiry · margin · cron</span></div>
+          <div class="cs-arch__node cs-arch__node--hot"><b>Recommendations</b><span>Prep · order · fix</span></div>
+          <div class="cs-arch__node"><b>Invoice OCR</b><span>Upload · match · review</span></div>
+        </div>
+        <div class="cs-arch__link">↓</div>
+        <div class="cs-arch__row" style="--cols:3">
+          <div class="cs-arch__node cs-arch__node--hot"><b>PostgreSQL</b><span>Drizzle ORM · migrations</span></div>
+          <div class="cs-arch__node cs-arch__node--hot"><b>Firebase</b><span>Auth · Cloud Messaging</span></div>
+          <div class="cs-arch__node"><b>Square POS</b><span>Sales data for trends</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 01 · THE APP, SCREEN BY SCREEN ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01)</p>
+        <h2 class="cs-h2 cs-h2--xl">Screen by<br />Screen</h2>
+        <p class="cs-body">Each screen below and the API behind it. The app is used in the kitchen, often with wet hands and a weak signal, so every screen reads from the local database first and syncs when it can.</p>
+      </div>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(01 · Dashboard)</p>
+          <h3 class="cs-h2">Do This Today</h3>
+          <p class="cs-body">The first thing a manager sees is a short list of what needs doing, sorted by urgency. I built the recommendations service behind it. <strong>Prep</strong> compares the same weekday over the last four weeks with current stock. <strong>Order</strong> flags items under their reorder point, skipping anything already on an open order. <strong>Fix</strong> pulls open margin and expiry alerts, with the most expensive first.</p>
+          <dl class="cs-facts">
+            <div><dt>Refresh</dt><dd>Updated every hour</dd></div>
+            <div><dt>Feeds it</dt><dd>Margin watchdog, expiry watchdog, sales history</dd></div>
+            <div><dt>Actions</dt><dd>Create a PO, update a price, dismiss</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/dashboard.webp" alt="Dashboard: Do This Today lists a margin problem on the Grilled Salmon Bowl, a tomato reorder, expiring romaine and a prep task" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(02 · Purchase Orders)</p>
+          <h3 class="cs-h2">Every order in one list</h3>
+          <p class="cs-body">Managers order from suppliers every day. I replaced the placeholder Orders tab with a real list: status filters with live counts, search by PO number or supplier, sort by date or amount, and pull to refresh. The + button opens a three-step order form (supplier, line items, review) where unit and cost fill in from the ingredient.</p>
+          <dl class="cs-facts">
+            <div><dt>Lifecycle</dt><dd>Draft → Sent → Partially Received → Received</dd></div>
+            <div><dt>Form</dt><dd>Keeps its state between steps, validates before sending</dd></div>
+            <div><dt>Status</dt><dd>Color-coded badges, the same in every screen</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/orders.webp" alt="Orders list filtered to All, with Sent, Partial, Draft and Received orders from four suppliers" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(03 · Receiving)</p>
+          <h3 class="cs-h2">From the truck to the shelf</h3>
+          <p class="cs-body">When a delivery arrives, the manager opens the order and taps Receive. Each line starts at the ordered quantity, so a full delivery is one tap. If something is short, like the shrimp here, they change that one number. The backend adds the stock to inventory and sets the order to Received or Partially Received, so the rest can be received later.</p>
+          <dl class="cs-facts">
+            <div><dt>Default</dt><dd>Received = ordered, edit only what's different</dd></div>
+            <div><dt>Checks</dt><dd>Can't receive more than was ordered</dd></div>
+            <div><dt>Result</dt><dd>Inventory updated, status set automatically</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media cs-system__media--green">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/receive.webp" alt="Receive Items sheet: salmon, mussels and scallops received in full, shrimp changed from 10 to 6 lb" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(04 · Item Detail)</p>
+          <h3 class="cs-h2">Everything about one ingredient</h3>
+          <p class="cs-body">Staff check this screen several times a shift. It shows stock against the PAR level, cost per unit and total value, and every cost change with how much it moved. When a supplier raises a price, the margin watchdog recalculates every dish that uses it and raises an alert if one falls below target. Quick actions adjust stock, log waste or start a reorder with the supplier already filled in.</p>
+          <dl class="cs-facts">
+            <div><dt>PAR</dt><dd>Below, near or above, with a stock bar and marker</dd></div>
+            <div><dt>Cost history</dt><dd>Last 10 changes with source and % change</dd></div>
+            <div><dt>Roles</dt><dd>Editing limited to owners and managers</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/item.webp" alt="Roma Tomatoes detail: 24 lb on hand, below the 30 lb PAR level, cost up 14.2% on the last invoice, with quick actions" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(05 · Flash Audit)</p>
+          <h3 class="cs-h2">Count the shelf with a camera</h3>
+          <p class="cs-body">Flash Audit counts stock by pointing a phone at a shelf. I built what it runs on: Vision Camera with a permission flow, a reusable camera with focus, zoom and flash, and a frame processor that reads frames without blocking the UI. Detections show as boxes with a confidence score, and tapping a box confirms it. Counts save to WatermelonDB, so an audit works fully offline in a walk-in with no signal.</p>
+          <dl class="cs-facts">
+            <div><dt>Camera</dt><dd>react-native-vision-camera + worklets, 30 FPS</dd></div>
+            <div><dt>Offline</dt><dd>WatermelonDB with a sync queue</dd></div>
+            <div><dt>Images</dt><dd>Compressed to under 1 MB before upload</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media cs-system__media--dark">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/audit.webp" alt="Flash Audit camera view with confirmed boxes on strawberries and lemons and unconfirmed boxes on a pomegranate and avocados" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(06 · Compliance)</p>
+          <h3 class="cs-h2">An audit score for FSMA 204</h3>
+          <p class="cs-body">The FDA's traceability rule needs complete records for high-risk foods like leafy greens, tomatoes and herbs. I built the scoring endpoint: 40 points for lot-code coverage, 30 for expiry capture, 20 for FSMA ingredient traceability and 10 for record retention, turned into a letter grade. A checklist endpoint next to it says what passes, what's partial and what to fix.</p>
+          <dl class="cs-facts">
+            <div><dt>Checklist</dt><dd>What passes, what's partial, what to fix</dd></div>
+            <div><dt>Grade</dt><dd>A to F from the 0–100 score</dd></div>
+            <div><dt>Export</dt><dd>Traceability log and FDA-format PDF</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media cs-system__media--green">
+          <div class="device device--phone"><img src="../../images/projects/freshstockai/screens/compliance.webp" alt="Compliance score tab: grade B, 86 out of 100, with breakdown bars for lot codes, expiry, FSMA ingredients and retention" width="786" height="1704" loading="lazy" /></div>
+        </div>
+      </article>
+      <p class="cs-note">Screens rebuilt from the app's source code (theme, layout, components and copy) and rendered at iPhone size with example data. No customer data is shown. Flash Audit background photo: Lisa Fotios on Pexels.</p>
+    </section>
+
+    <!-- ===== PART 02 · ON THE WEB ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 02)</p>
+        <h2 class="cs-h2 cs-h2--xl">On the<br />Web</h2>
+        <p class="cs-body">Owners run the business from a desktop app. The frontend team built the pages; they run on the same API as the phone, and that API is where my work shows up. The three pages below run on backend features I built: the FDA audit score and lot tracing, invoice scanning, and margin alerts.</p>
+      </div>
+      <div class="cs-film cs-film--single fs-film--web cs-reveal" aria-label="FreshStockAI web app: Compliance and Traceability">
+        <div class="device device--browser">
+          <img src="../../images/projects/freshstockai/screens/web-compliance.webp" alt="Compliance and Traceability page: lot totals in gradient tiles, filters, and a table of lots with status and FSMA 204 category" width="1920" height="1200" loading="lazy" />
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>Compliance · every lot traced, scored for FDA audits</p>
+      </div>
+      <div class="cs-gallery cs-gallery--2 cs-reveal">
+        <figure>
+          <div class="device device--browser"><img src="../../images/projects/freshstockai/screens/web-margin.webp" alt="Margin Alerts page: four dishes below target margin, each with a margin bar, suggested price and Apply or Dismiss buttons" width="1920" height="1200" loading="lazy" /></div>
+          <figcaption class="cs-caption"><span>Margin Alerts</span><span>Dishes losing money, fixed in one tap</span></figcaption>
+        </figure>
+        <figure>
+          <div class="device device--browser"><img src="../../images/projects/freshstockai/screens/web-invoices.webp" alt="Scan Invoice review step: items read from a supplier invoice with confidence scores and the inventory item each one matched to" width="1920" height="1200" loading="lazy" /></div>
+          <figcaption class="cs-caption"><span>Scan Invoice</span><span>Photo of an invoice in, stock updated</span></figcaption>
+        </figure>
+      </div>
+      <p class="cs-note">Pages rebuilt from screenshots of the web app, with example data. No customer data is shown.</p>
+    </section>
+
+    <!-- ===== BEHIND THE SCREENS ===== -->
+    <section class="container cs-section">
+      <h2 class="cs-h2 cs-reveal">Behind the Screens</h2>
+      <div class="cs-approach">
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">01</span>
+          <h3 class="cs-step__title">Expiry Watchdog</h3>
+          <p class="cs-body">A cron job at 6 AM and 6 PM finds everything within two days of its discard date, creates expiry alerts and sends push notifications through Firebase Cloud Messaging, respecting each user's notification settings.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">02</span>
+          <h3 class="cs-step__title">API Matches the Spec</h3>
+          <p class="cs-body">Renamed the routes to the PM's API spec (vendors, inventory, OCR, compliance, AI) and split the single dashboard into six endpoints, then updated the mobile calls and tests to match. This was blocking all frontend work.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">03</span>
+          <h3 class="cs-step__title">Live Updates</h3>
+          <p class="cs-body">A WebSocket server next to the HTTP server, authenticated by token, sends low-stock alerts, new notifications and order status changes to members of the same organization only.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">04</span>
+          <h3 class="cs-step__title">Predictable Errors</h3>
+          <p class="cs-body">A global error handler gives every endpoint the same JSON error shape, with error codes the frontend can handle, field-level validation details and no stack traces in production.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">05</span>
+          <h3 class="cs-step__title">A Codebase People Can Trust</h3>
+          <p class="cs-body">Moved stray files into the standard structure, added ESLint, Prettier and a lint-staged pre-commit hook, wrote end-to-end tests for invoice OCR, flash audit sync and margin alerts, and documented the API and architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Timeline)</p>
+        <h2 class="cs-h2">Month by Month</h2>
+        <p class="cs-body">I started on the database and worked out to the product. The bigger systems came once the foundations were in place.</p>
+      </div>
+      <div class="cs-approach">
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">Dec 2025</span>
+          <h3 class="cs-step__title">Data Model</h3>
+          <p class="cs-body">Purchase order schema in Drizzle, the first migrations, PO routes, and inventory receive and waste endpoints with activity logging.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">Jan 2026</span>
+          <h3 class="cs-step__title">Platform &amp; Camera</h3>
+          <p class="cs-body">Error handling, WebSockets and the Postman collection on the server. Vision Camera, the permission flow, the camera component and invoice capture on mobile.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">Feb 2026</span>
+          <h3 class="cs-step__title">Intelligence</h3>
+          <p class="cs-body">Frame processor, Flash Audit and image compression. Expiry, FEFO, recommendations, margin and alert endpoints. Offline testing, E2E tests and docs.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">Mar 2026</span>
+          <h3 class="cs-step__title">Product Screens</h3>
+          <p class="cs-body">Orders list, create order and order detail with receiving, plus the item detail screen. Expiry watchdog, push notifications and linting.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">Apr 2026</span>
+          <h3 class="cs-step__title">Ready for the Demo</h3>
+          <p class="cs-body">API renamed to match the spec, the dashboard split into six endpoints, dedicated margin alerts, compliance score and checklist, settings and onboarding endpoints.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Tech Stack)</p>
+        <h2 class="cs-h2">Built With</h2>
+        <p class="cs-body">TypeScript everywhere: one language from the database schema to the phone.</p>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>TypeScript</b><span>API and mobile app</span></li>
+        <li><b>Node.js</b><span>REST API &amp; cron jobs</span></li>
+        <li><b>PostgreSQL</b><span>Main database</span></li>
+        <li><b>Drizzle ORM</b><span>Schema &amp; migrations</span></li>
+        <li><b>React Native</b><span>Expo · React Native Paper</span></li>
+        <li><b>WatermelonDB</b><span>Offline storage &amp; sync</span></li>
+        <li><b>Vision Camera</b><span>Frame processing</span></li>
+        <li><b>Firebase</b><span>Auth &amp; Cloud Messaging</span></li>
+        <li><b>WebSockets</b><span>Real-time events</span></li>
+        <li><b>ESLint · Prettier</b><span>Lint-staged pre-commit</span></li>
+        <li><b>Postman</b><span>API collection</span></li>
+        <li><b>ClickUp</b><span>Sprint planning</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../atej/">
+        <span class="cs-kicker">Next Experience</span>
+        <span class="cs-next__title">ATEJ <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

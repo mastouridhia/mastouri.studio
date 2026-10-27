@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orvexa - Case Study · mastouri's studio</title>
+  <meta name="description" content="Orvexa: a QR-based restaurant ordering and operations platform for Tunisia - customer app, kitchen display, waiter app and owner dashboard, synced in real time. Designed and built by Mastouri Dhia." />
+  <link rel="icon" type="image/svg+xml" href="../../images/projects/orvexa/orvexa-mark.svg" />
+  <link rel="canonical" href="https://your-domain.com/work/orvexa/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/orvexa/" />
+  <meta property="og:title" content="Orvexa - Case Study" />
+  <meta property="og:description" content="Orvexa: a QR-based restaurant ordering and operations platform for Tunisia - customer app, kitchen display, waiter app and owner dashboard, synced in real time. Designed and built by Mastouri Dhia." />
+  <meta property="og:image" content="https://your-domain.com/images/projects/orvexa/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/projects/orvexa/og-image.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+  <style>
+    .case-study--orvexa {
+      --cs-brand: #d97a2c;
+      --cs-panel: #f2efe8;
+    }
+    .case-study--orvexa .cs-title span { color: var(--cs-brand); }
+  </style>
+</head>
+<body class="case-study case-study--orvexa">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <p class="cs-kicker">(Case Study · 03 · Flagship)</p>
+      <h1 class="cs-title">Orvexa<span>.</span></h1>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>Product Design</li>
+        <li>Full-Stack</li>
+        <li>Realtime Systems</li>
+        <li>Design System</li>
+        <li>Brand</li>
+        <li>DevOps</li>
+      </ul>
+
+      <div class="cs-film" aria-label="Product film: an order placed on the customer phone, and the live kitchen display">
+        <div class="device device--phone">
+          <video data-case-video muted loop playsinline preload="none" poster="../../videos/orvexa/customer-order-poster.jpg" aria-label="Customer browsing the menu, ordering, tracking the order and calling a waiter">
+            <source src="../../videos/orvexa/customer-order.webm" type="video/webm" />
+          </video>
+        </div>
+        <div class="device device--tablet">
+          <video data-case-video muted loop playsinline preload="none" poster="../../videos/orvexa/kitchen-display-poster.jpg" aria-label="Kitchen display with aging tickets, items being checked off and a press-and-hold bump">
+            <source src="../../videos/orvexa/kitchen-display.webm" type="video/webm" />
+          </video>
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>One order · two screens · zero refresh</p>
+      </div>
+
+      <p class="cs-lead">
+        Orvexa is a QR ordering and operations platform for restaurants in Tunisia. A diner scans the table, orders
+        in Arabic, French or English, and the kitchen, the waiter and the owner all see it the same second - on four
+        connected apps, with no app to install and no paper ticket. I designed and built it alone, end to end, over four
+        months: product, brand, design system, frontends, realtime backend and the production infrastructure it runs on.
+      </p>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Product, Design &amp; Full-Stack Engineering</dd></div>
+        <div><dt>Timeline</dt><dd>4 Months · from Dec 2025</dd></div>
+        <div><dt>Year</dt><dd>2025–2026</dd></div>
+        <div><dt>Team</dt><dd>Solo</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== STORY ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(My Role)</p>
+        <ul class="cs-list">
+          <li>Designed the product and the “Saffron Hospitality” design system, from three moodboard directions to the final tokens.</li>
+          <li>Built the four frontends - customer, kitchen, waiter, admin - and the shared types and API client in one TypeScript monorepo.</li>
+          <li>Built the realtime API: orders, sessions, tables, payments and waiter calls over Socket.io rooms, backed by Postgres and Redis.</li>
+          <li>Took it to production: Docker, nginx with automatic HTTPS, backups, monitoring, runbooks - and the landing page, plans and contracts to sell it.</li>
+        </ul>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Problem)</p>
+        <p class="cs-body">In most restaurants the order still travels by paper: a waiter writes it, walks it to the kitchen, a printer jams, a ticket gets lost, and the table waves for someone who doesn't see them. The owner learns how the day went after it's over.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Bet)</p>
+        <p class="cs-body">One synced system instead of four disconnected habits. The diner orders from the table, the kitchen sees the ticket <strong>the second it's placed</strong>, the waiter sees <strong>who is calling and for how long</strong>, and the owner sees revenue, covers and what's selling <strong>live</strong>. No app to install, no diner account, no data kept after the meal.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Outcome)</p>
+        <p class="cs-body">Orvexa shipped to production on its own domain and went live with its first client, <strong>Capitol Amri</strong>, with their full menu, tables and staff in the system. Building it was the part I could do alone; selling it restaurant by restaurant was a different job. After a while Capitol went back to paper menus, and I paused the product.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(What I Learned)</p>
+        <ul class="cs-list">
+          <li><strong>Distribution is half the product.</strong> Four months of building, and the hardest problem was never in the code.</li>
+          <li><strong>Habits beat features.</strong> A paper menu has no learning curve - adoption needs on-site onboarding and staff buy-in, not just a better screen.</li>
+          <li><strong>Sell the smallest step first.</strong> Next time I'd start with the QR menu alone, prove it in a few restaurants, then grow into ordering and the kitchen display.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SCOPE ===== -->
+    <section class="container cs-section--tight">
+      <div class="cs-scope cs-reveal">
+        <p class="cs-kicker">(Scope)</p>
+      </div>
+      <div class="cs-stats cs-stats--center cs-reveal">
+        <div><span class="cs-stat__num">4</span><span class="cs-stat__label">connected apps on one live database</span></div>
+        <div><span class="cs-stat__num">3</span><span class="cs-stat__label">languages, with full right-to-left Arabic</span></div>
+        <div><span class="cs-stat__num">31</span><span class="cs-stat__label">database migrations shipped</span></div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="container cs-section">
+      <h2 class="cs-h2 cs-reveal">Process</h2>
+      <div class="cs-approach">
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">01</span>
+          <h3 class="cs-step__title">Direction</h3>
+          <p class="cs-body">Three moodboards - editorial, tech-crisp and hospitality-soft. Saffron won: warm and North-African without going terracotta. The working name was TableFlow; the product launched as Orvexa.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">02</span>
+          <h3 class="cs-step__title">System</h3>
+          <p class="cs-body">One token file for color, type, spacing, radius, shadow and motion, plus twelve primitives - so four very different screens still feel like one product.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">03</span>
+          <h3 class="cs-step__title">Four Surfaces</h3>
+          <p class="cs-body">Each user gets a screen built for their device and their pressure: a calm phone menu, a loud kitchen tablet, a one-hand waiter app and a dense owner dashboard.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">04</span>
+          <h3 class="cs-step__title">Realtime Core</h3>
+          <p class="cs-body">Orders, calls and table states push through Socket.io rooms per restaurant, table, kitchen and waiter. No polling, no refresh, and every non-happy path has a designed state.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">05</span>
+          <h3 class="cs-step__title">Ship &amp; Operate</h3>
+          <p class="cs-body">Production on Docker Compose behind nginx with Let's Encrypt, nightly backups, health checks, runbooks for bad days - and a landing page and plans to sell it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 01 · CUSTOMER ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01 · Customer App)</p>
+        <h2 class="cs-h2 cs-h2--xl">Scan, order, relax.</h2>
+        <p class="cs-body">Opened from the QR on the table - no account, no install. The menu speaks the diner's language, the order goes out in one tap, and a live timeline replaces “where's our food?”.</p>
+      </div>
+
+      <div class="cs-system cs-reveal" style="margin-top:2.5rem">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(Recorded from the prototype)</p>
+          <h3 class="cs-h2">From menu to “on the way”</h3>
+          <p class="cs-body">Browse by category, open a dish with its parallax photo, add it, review the order and send it to the kitchen. The timeline moves from received to preparing to ready as the kitchen works, and one tap brings water, bread, the manager or the bill.</p>
+          <dl class="cs-facts">
+            <div><dt>Languages</dt><dd>Arabic (RTL) · French · English, switchable live</dd></div>
+            <div><dt>Tracking</dt><dd>Received → Preparing → Ready → Served</dd></div>
+            <div><dt>Service</dt><dd>Call waiter, request the bill, split equally</dd></div>
+            <div><dt>Privacy</dt><dd>No diner accounts; the session ends with the meal</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:#19140e">
+          <div class="device device--phone">
+            <video data-case-video muted loop playsinline preload="none" poster="../../videos/orvexa/customer-order-poster.jpg" aria-label="Customer app walkthrough">
+              <source src="../../videos/orvexa/customer-order.webm" type="video/webm" />
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-flow-scroll" data-flow-scroll>
+      <div class="cs-flow" data-flow aria-label="Customer journey, step by step">
+        <ol class="cs-flow__steps">
+          <li><button type="button" class="cs-flow__step is-active"><span class="cs-flow__num">01</span><span><b>Scan &amp; browse</b><small>The QR opens the menu for that table - categories, photos, prices in TND, in the diner's language.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">02</span><span><b>Open a dish</b><small>Parallax photo, preparation time, allergens and a note for the kitchen.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">03</span><span><b>Review the order</b><small>Adjust quantities, see the service charge, send it to the kitchen in one tap.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">04</span><span><b>Sent to the kitchen</b><small>Instant confirmation - the ticket is already on the kitchen display.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">05</span><span><b>Track it live</b><small>Received → preparing → ready, updated by the kitchen in real time.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">06</span><span><b>Call the waiter</b><small>Water, bread or the manager - the waiter acknowledges and the table sees “On the way”.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">07</span><span><b>Ask for the bill</b><small>Itemised bill with service, split equally between the table.</small></span><span class="cs-flow__bar"></span></button></li>
+        </ol>
+        <div class="cs-flow__stage">
+          <div class="device device--phone">
+            <div class="cs-flow__screens">
+              <img class="is-active" src="../../images/projects/orvexa/menu.jpg" alt="Menu with categories, dishes, prices in TND and a review-order bar" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/item.jpg" alt="Dish detail with photo, price, preparation time, allergens and kitchen notes" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/cart.jpg" alt="Order sheet with quantities, service charge and send-to-kitchen button" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/confirmed.jpg" alt="Order confirmed: sent to the kitchen" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/track.jpg" alt="Live order tracking timeline" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/waitercall.jpg" alt="Waiter call acknowledged: On the way" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/bill.jpg" alt="Bill with items, service and split between people" width="804" height="1748" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 02 · KITCHEN ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 02 · Kitchen Display)</p>
+        <h2 class="cs-h2 cs-h2--xl">The printer, retired.</h2>
+        <p class="cs-body">A tablet on the pass replaces paper tickets. Built for a loud, fast kitchen: read from a metre away, hard to mis-tap, and honest about what's running late.</p>
+      </div>
+      <div class="cs-film cs-film--single cs-reveal">
+        <div class="device device--tablet-lg">
+          <video data-case-video muted loop playsinline preload="none" poster="../../videos/orvexa/kitchen-display-poster.jpg" aria-label="Kitchen display live simulation">
+            <source src="../../videos/orvexa/kitchen-display.webm" type="video/webm" />
+          </video>
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>Live simulation · tick items, hold to bump</p>
+      </div>
+      <div class="cs-gallery cs-gallery--3 cs-reveal">
+        <dl class="cs-facts" style="margin:0">
+          <div><dt>Aging</dt><dd>Green &lt; 5 min · saffron 5–12 · red and pulsing after 12</dd></div>
+          <div><dt>Bump</dt><dd>Press-and-hold, so a busy hand can't fire it by accident</dd></div>
+          <div><dt>Stations</dt><dd>Hot · Cold · Pass load in the header</dd></div>
+          <div><dt>Tickets</dt><dd>French dish names with Arabic underneath, notes and allergies in saffron</dd></div>
+        </dl>
+        <figure style="grid-column:span 2"><img src="../../images/projects/orvexa/wall.jpg" alt="Wall display: high-contrast read-only ticket queue for the whole brigade" width="1920" height="1080" loading="lazy" /><figcaption class="cs-caption"><span>[ Wall ]</span><span>Read-only 1080p view for the whole line</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ===== PART 03 · WAITER ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 03 · Waiter App)</p>
+        <h2 class="cs-h2 cs-h2--xl">Who needs me, first.</h2>
+        <p class="cs-body">The server's phone shows the room as a live map. Tables that call throb red, the queue is sorted oldest-first, and every table follows one state machine: open → seated → ordered → cooking → ready → paying → clean.</p>
+      </div>
+      <div class="cs-system cs-system--flip cs-reveal" style="margin-top:2.5rem">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(Recorded from the prototype)</p>
+          <h3 class="cs-h2">Floor, calls, table</h3>
+          <p class="cs-body">Yassine opens the call queue, taps “On the way” - the diner sees the confirmation instantly - then goes back to the floor and opens a table to fire the next course.</p>
+          <dl class="cs-facts">
+            <div><dt>Floor</dt><dd>Pannable room map with zones and state rings</dd></div>
+            <div><dt>Calls</dt><dd>Green &lt; 60 s → saffron → red “overdue” after 120 s</dd></div>
+            <div><dt>Table</dt><dd>Course-by-course fire-to-kitchen and pass-to-table</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media" style="background:#19140e">
+          <div class="device device--phone">
+            <video data-case-video muted loop playsinline preload="none" poster="../../videos/orvexa/waiter-floor-poster.jpg" aria-label="Waiter app walkthrough">
+              <source src="../../videos/orvexa/waiter-floor.webm" type="video/webm" />
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="cs-flow-scroll" data-flow-scroll>
+      <div class="cs-flow cs-flow--dark" data-flow aria-label="Waiter shift, step by step">
+        <ol class="cs-flow__steps">
+          <li><button type="button" class="cs-flow__step is-active"><span class="cs-flow__num">01</span><span><b>Start the shift</b><small>Clock in and see your sections, tables, reservations and today's specials.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">02</span><span><b>Read the room</b><small>Every table's state at a glance - calling tables throb red until someone answers.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">03</span><span><b>Answer, oldest first</b><small>Calls age from green to red “overdue”; “On the way” confirms it at the table instantly.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">04</span><span><b>Run the table</b><small>Each course's status, fire the next one to the kitchen, add items or bring the bill.</small></span><span class="cs-flow__bar"></span></button></li>
+        </ol>
+        <div class="cs-flow__stage">
+          <div class="device device--phone">
+            <div class="cs-flow__screens">
+              <img class="is-active" src="../../images/projects/orvexa/shift.jpg" alt="Shift start: Welcome back, Yassine" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/w-floor.jpg" alt="Waiter floor map with table states" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/w-calls.jpg" alt="Call queue sorted oldest first" width="804" height="1748" loading="lazy" />
+              <img src="../../images/projects/orvexa/w-detail.jpg" alt="Table detail with courses and status" width="804" height="1748" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 04 · OWNER ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 04 · Owner Dashboard)</p>
+        <h2 class="cs-h2 cs-h2--xl">The day, while it happens.</h2>
+        <p class="cs-body">One desktop screen tells the owner how the restaurant is doing right now - and every lever to run it: menu, tables, floor plan, staff, reports.</p>
+      </div>
+      <div class="cs-media-full cs-reveal">
+        <div class="device device--browser"><img src="../../images/projects/orvexa/admin.jpg" alt="Owner dashboard: revenue, covers, average ticket, service pulse chart, live feed, menu ranking and staff" width="1920" height="1200" loading="lazy" /></div>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>KPI strip</b><span>Revenue, covers, average ticket and dwell, vs yesterday</span></li>
+        <li><b>Service pulse</b><span>Covers minute by minute, peak called out</span></li>
+        <li><b>Menu ranking</b><span>Margin × velocity: what earns vs what just sells</span></li>
+        <li><b>Right now</b><span>Live feed of seatings, calls, kitchen and payments</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== PART 05 · DESIGN SYSTEM ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 05 · Design System)</p>
+        <h2 class="cs-h2 cs-h2--xl">Saffron Hospitality.</h2>
+        <p class="cs-body">One confident accent, warm paper instead of stark white, and an italic serif for the moments of hospitality - set against a precise sans for everything that has to be read fast.</p>
+      </div>
+      <div class="cs-subhead cs-reveal">
+        <p class="cs-kicker">(01 · Direction)</p>
+        <p class="cs-body">Three directions, explored side by side. Editorial was too quiet for a kitchen, tech-crisp too cold for a dining room. Saffron worked for both.</p>
+      </div>
+      <div class="cs-row cs-row--3 cs-reveal">
+        <figure><img src="../../images/projects/orvexa/mood-editorial.jpg" alt="Direction A: editorial, warm-minimal" width="840" height="1240" loading="lazy" /><figcaption class="cs-caption"><span>[ A ]</span><span>Editorial · warm-minimal</span></figcaption></figure>
+        <figure><img src="../../images/projects/orvexa/mood-tech.jpg" alt="Direction B: tech-crisp, linear-coded" width="840" height="1240" loading="lazy" /><figcaption class="cs-caption"><span>[ B ]</span><span>Tech-crisp · linear-coded</span></figcaption></figure>
+        <figure class="is-chosen"><img src="../../images/projects/orvexa/moodboard.jpg" alt="Direction C: saffron, hospitality-soft - selected" width="840" height="1240" loading="lazy" /><figcaption class="cs-caption"><span>[ C ]</span><span>Saffron · hospitality-soft - chosen</span></figcaption></figure>
+      </div>
+
+      <div class="cs-subhead cs-reveal">
+        <p class="cs-kicker">(02 · Foundations)</p>
+        <p class="cs-body">Warm-paper neutrals and one saffron scale, with dark operator surfaces for the kitchen. Newsreader italic for hospitality moments, Geist for everything read at speed.</p>
+      </div>
+      <div class="cs-row cs-reveal">
+        <figure><img src="../../images/projects/orvexa/sys-color.jpg" alt="Color system: paper neutrals, saffron accent scale, status and operator surfaces" width="1600" height="1000" loading="lazy" /><figcaption class="cs-caption"><span>[ 01 ]</span><span>Color</span></figcaption></figure>
+        <figure><img src="../../images/projects/orvexa/sys-type.jpg" alt="Type system: Newsreader italic with Geist" width="1600" height="1000" loading="lazy" /><figcaption class="cs-caption"><span>[ 02 ]</span><span>Type</span></figcaption></figure>
+      </div>
+
+      <div class="cs-subhead cs-reveal">
+        <p class="cs-kicker">(03 · Components &amp; Brand)</p>
+        <p class="cs-body">Twelve primitives shared by all four apps, and a mark built from the same three tones - ink, paper and saffron.</p>
+      </div>
+      <div class="cs-row cs-row--wide-square cs-reveal">
+        <figure><img src="../../images/projects/orvexa/sys-comp.jpg" alt="Twelve component primitives" width="1600" height="1125" loading="lazy" /><figcaption class="cs-caption"><span>[ 03 ]</span><span>Components</span></figcaption></figure>
+        <figure><img src="../../images/projects/orvexa/brand-post.jpg" alt="Orvexa mark and wordmark with the tagline The good kind of quick" width="1080" height="1080" loading="lazy" /><figcaption class="cs-caption"><span>[ 04 ]</span><span>“The good kind of quick.”</span></figcaption></figure>
+      </div>
+
+      <div class="cs-subhead cs-reveal">
+        <p class="cs-kicker">(04 · Every State, Designed)</p>
+        <p class="cs-body">Real service isn't the happy path. Loading, empty, offline and failed payments each got a screen of their own - calm, specific, and always with a next step.</p>
+      </div>
+      <div class="cs-row cs-row--4 cs-reveal">
+        <figure><div class="device device--phone"><img src="../../images/projects/orvexa/state-loading.jpg" alt="Menu loading skeleton" width="804" height="1748" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 01 ]</span><span>Loading</span></figcaption></figure>
+        <figure><div class="device device--phone"><img src="../../images/projects/orvexa/state-empty.jpg" alt="Empty basket state" width="804" height="1748" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 02 ]</span><span>Empty</span></figcaption></figure>
+        <figure><div class="device device--phone"><img src="../../images/projects/orvexa/state-network.jpg" alt="Network error: we lost the kitchen for a moment" width="804" height="1748" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 03 ]</span><span>Offline</span></figcaption></figure>
+        <figure><div class="device device--phone"><img src="../../images/projects/orvexa/state-payment.jpg" alt="Payment didn't go through" width="804" height="1748" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 04 ]</span><span>Payment failed</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ===== PART 06 · ENGINEERING ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 06 · Under the Hood)</p>
+        <h2 class="cs-h2 cs-h2--xl">Built to run a real service.</h2>
+        <p class="cs-body">A TypeScript monorepo: four React 19 apps and one Express API sharing types, zod schemas and socket contracts - so a change in an order's shape breaks the build, not a dinner service.</p>
+      </div>
+      <div class="cs-arch cs-reveal" role="img" aria-label="Architecture: four React apps connect through an nginx proxy to an Express and Socket.io API, which uses Postgres and Redis">
+        <div class="cs-arch__row">
+          <div class="cs-arch__node"><b>Customer</b><span>PWA · QR session</span></div>
+          <div class="cs-arch__node"><b>Kitchen</b><span>KDS tablet + wall</span></div>
+          <div class="cs-arch__node"><b>Waiter</b><span>Phone · floor &amp; calls</span></div>
+          <div class="cs-arch__node"><b>Admin</b><span>Desktop · owner</span></div>
+        </div>
+        <p class="cs-arch__link">↓ HTTPS · nginx proxy · Let's Encrypt ↓</p>
+        <div class="cs-arch__row" style="--cols:2">
+          <div class="cs-arch__node cs-arch__node--hot"><b>Express API</b><span>JWT staff auth · QR customer sessions · rate limits · OpenAPI</span></div>
+          <div class="cs-arch__node cs-arch__node--hot"><b>Socket.io</b><span>Rooms: restaurant · table · kitchen · waiter</span></div>
+        </div>
+        <p class="cs-arch__link">↓ Drizzle ORM ↓</p>
+        <div class="cs-arch__row" style="--cols:3">
+          <div class="cs-arch__node"><b>Postgres</b><span>31 migrations · nightly pg_dump</span></div>
+          <div class="cs-arch__node"><b>Redis</b><span>Cache &amp; presence</span></div>
+          <div class="cs-arch__node"><b>Docker Compose</b><span>One host · health checks · JSON logs</span></div>
+        </div>
+      </div>
+      <dl class="cs-facts cs-reveal" style="margin-top:2rem">
+        <div><dt>Security</dt><dd>Refresh-token rotation, session expiry, account lockout, password reset, role-based access for admin · manager · kitchen · waiter</dd></div>
+        <div><dt>Testing</dt><dd>Vitest suites for routes, services and order transitions, plus Playwright end-to-end flows for ordering, kitchen and payment</dd></div>
+        <div><dt>Operations</dt><dd>Zero-downtime certificate renewal, rotating backups, uptime endpoints, rollback and restore runbooks</dd></div>
+        <div><dt>Business</dt><dd>Plans and capability gating, platform admin tools, a seeded demo tenant and a daily email report for owners</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== PART 07 · GO TO MARKET ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 07 · Go to Market)</p>
+        <h2 class="cs-h2 cs-h2--xl">Your restaurant, in one scan.</h2>
+        <p class="cs-body">A French-first landing page for the Tunisian market, four plans priced in dinars with no commission on sales, and a 14-day free trial without a card. The funnel was ready - finding restaurants willing to change how they work was the real test.</p>
+      </div>
+      <div class="cs-gallery cs-gallery--2 cs-reveal">
+        <figure><div class="device device--browser"><img src="../../images/projects/orvexa/landing-hero.jpg" alt="Orvexa landing page hero: Votre restaurant, géré en un scan" width="1440" height="720" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 01 ]</span><span>Landing</span></figcaption></figure>
+        <figure><div class="device device--browser"><img src="../../images/projects/orvexa/landing-pricing.jpg" alt="Pricing: Essentiel, Plus, Pro and Premium plans" width="1440" height="760" loading="lazy" /></div><figcaption class="cs-caption"><span>[ 02 ]</span><span>Pricing</span></figcaption></figure>
+      </div>
+      <div class="cs-plans cs-reveal">
+        <div><b>19 <small>TND/mo</small></b><span><em>Essentiel</em> · cafés &amp; quick service - digital QR menu</span></div>
+        <div><b>79 <small>TND/mo</small></b><span><em>Plus</em> · table ordering, waiter calls, WhatsApp</span></div>
+        <div><b>149 <small>TND/mo</small></b><span><em>Pro</em> · kitchen display &amp; waiter app</span></div>
+        <div><b>499+ <small>TND/mo</small></b><span><em>Premium</em> · hotels &amp; resorts, multi-zone</span></div>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Tech Stack)</p>
+        <h2 class="cs-h2">Built With</h2>
+        <p class="cs-body">End-to-end TypeScript, from the database schema to the kitchen tablet.</p>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>React 19 + Vite</b><span>Four frontends</span></li>
+        <li><b>TypeScript</b><span>Shared types &amp; zod schemas</span></li>
+        <li><b>Express</b><span>REST API · OpenAPI docs</span></li>
+        <li><b>Socket.io</b><span>Realtime rooms</span></li>
+        <li><b>PostgreSQL + Drizzle</b><span>Schema &amp; migrations</span></li>
+        <li><b>Redis</b><span>Cache &amp; presence</span></li>
+        <li><b>Docker + nginx</b><span>Deploy, TLS, routing</span></li>
+        <li><b>Vitest + Playwright</b><span>Unit, API &amp; e2e tests</span></li>
+      </ul>
+      <a class="cs-btn" href="https://github.com/mastouridhia/orvexa" target="_blank" rel="noopener noreferrer">View the code on GitHub <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../agrilink/">
+        <span class="cs-kicker">Next Project</span>
+        <span class="cs-next__title">AgriLink <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

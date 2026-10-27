@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Value - Case Study · mastouri's studio</title>
+  <meta name="description" content="How Mastouri Dhia gave Value's IT Support team one security view across Windows and Linux machines by rolling out Wazuh, an open-source SIEM, during a January 2026 internship." />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="canonical" href="https://your-domain.com/work/value/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/value/" />
+  <meta property="og:title" content="Value - Case Study" />
+  <meta property="og:description" content="How Mastouri Dhia gave Value's IT Support team one security view across Windows and Linux machines by rolling out Wazuh, an open-source SIEM, during a January 2026 internship." />
+  <meta property="og:image" content="https://your-domain.com/images/social/value.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/value.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+  <style>
+    /* Brand colors from the Value logo (black with an orange notch) and Wazuh blue */
+    .case-study--value {
+      --cs-brand: #f28a1e;
+      --cs-film-bg: #0b0f14;
+      --wz: #00a9e5;
+    }
+    .case-study--value .cs-film::before {
+      background: radial-gradient(closest-side, rgba(0, 169, 229, .32), transparent);
+    }
+    .case-study--value .cs-film::after {
+      background: radial-gradient(closest-side, rgba(242, 138, 30, .2), transparent);
+    }
+    .case-study--value .cs-film .device--browser {
+      width: min(100%, 1100px);
+      max-width: 1100px;
+      margin-inline: 0;
+      background: #161d27;
+    }
+    .case-study--value .cs-system__media {
+      align-items: center;
+      background: radial-gradient(120% 100% at 50% 0%, #16212d 0%, #0b0f14 100%);
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+    }
+    .case-study--value .cs-system__media .device--browser { width: 100%; background: #161d27; }
+    .case-study--value .cs-system__media .device--browser img { width: 100%; }
+
+    /* Headline statement under the title */
+    .vl-statement {
+      max-width: 22ch;
+      margin-top: clamp(1.5rem, 3vw, 2.5rem);
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    .vl-statement em { font-style: normal; color: var(--wz); }
+
+    /* Before / after */
+    .vl-compare {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .vl-compare__col {
+      padding: clamp(1.25rem, 3vw, 2.25rem);
+      background: var(--cs-panel);
+    }
+    .vl-compare__col--after { background: #0b0f14; color: #e6edf3; }
+    .vl-compare__col h3 {
+      font-family: var(--font-label);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cs-muted);
+    }
+    .vl-compare__col--after h3 { color: var(--wz); }
+    .vl-compare__col ul { margin-top: 1.25rem; }
+    .vl-compare__col li {
+      display: flex;
+      gap: .8rem;
+      padding-block: .9rem;
+      border-top: 1px solid var(--cs-rule);
+      font-size: clamp(1rem, 1.3vw, 1.125rem);
+      line-height: 1.4;
+    }
+    .vl-compare__col--after li { border-top-color: #1d2733; }
+    .vl-compare__col li::before { content: "—"; color: var(--cs-muted); }
+    .vl-compare__col--after li::before { content: "✓"; color: #3fd28b; }
+
+    /* Coverage tiles */
+    .vl-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: clamp(1.5rem, 3vw, 2.5rem);
+      background: var(--cs-rule);
+      border: 1px solid var(--cs-rule);
+    }
+    .vl-tile {
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      background: var(--cs-canvas);
+      transition: background-color 400ms var(--ease), color 400ms var(--ease);
+    }
+    .vl-tile:hover { background: #0b0f14; color: #e6edf3; }
+    .vl-tile:hover p { color: rgba(230, 237, 243, .65); }
+    .vl-tile svg { width: 28px; height: 28px; color: var(--wz); }
+    .vl-tile h3 {
+      margin-top: 1.25rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+    .vl-tile p {
+      margin-top: .5rem;
+      font-size: .875rem;
+      line-height: 1.5;
+      color: var(--cs-muted);
+      transition: color 400ms var(--ease);
+    }
+
+    /* Architecture, on Wazuh colors */
+    .case-study--value .cs-arch { background: #0b0f14; }
+    .case-study--value .cs-arch__node--hot {
+      border-color: rgba(0, 169, 229, .6);
+      background: rgba(0, 169, 229, .12);
+    }
+    .case-study--value .cs-arch__link { color: #6fd0f2; }
+
+    /* Skills */
+    .vl-skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 1.25rem;
+      border-top: 1px solid var(--cs-rule);
+    }
+    .vl-skills li {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      padding: 1.25rem 1.5rem 1.25rem 0;
+      border-bottom: 1px solid var(--cs-rule);
+    }
+    .vl-skills span {
+      font-family: var(--font-label);
+      font-size: .75rem;
+      color: var(--cs-muted);
+      padding-top: .2rem;
+    }
+    .vl-skills b { display: block; font-weight: 500; font-size: 1rem; }
+    .vl-skills p { margin-top: .3rem; font-size: .875rem; line-height: 1.5; color: var(--cs-muted); }
+
+    @media (max-width: 760px) {
+      .vl-compare, .vl-skills { grid-template-columns: 1fr; }
+      .vl-tiles { grid-template-columns: 1fr; }
+      .case-study--value .cs-arch__row { grid-template-columns: 1fr; }
+      .case-study--value .cs-stats { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 761px) and (max-width: 1000px) {
+      .vl-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body class="case-study case-study--value">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <img class="cs-brandmark cs-brandmark--wide" src="../../images/projects/value/value-logo.png" alt="Value logo" width="467" height="113" />
+      <p class="cs-kicker">(Experience · Value)</p>
+      <h1 class="cs-title">Wazuh SIEM</h1>
+      <p class="vl-statement">From reading logs machine by machine to <em>one live security view</em> of the whole fleet.</p>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>SIEM</li>
+        <li>Intrusion Detection</li>
+        <li>Wazuh</li>
+        <li>Linux · Windows</li>
+      </ul>
+      <p class="cs-award">Cybersecurity Intern · January 2026</p>
+
+      <div class="cs-film" aria-label="The Wazuh dashboard showing three active agents">
+        <div class="device device--browser">
+          <img src="../../images/projects/value/dashboard.webp" alt="Wazuh Endpoints dashboard: 3 of 3 agents active, one each on Windows 11 Pro, CentOS Stream 9 and Ubuntu 24.04, none disconnected" width="2800" height="1260" />
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>3 / 3 agents active</p>
+      </div>
+
+      <p class="cs-lead">
+        Value is a Tunisian company working in digital services, data and AI. Its IT Support team had no central
+        place to see what was happening on its machines. I brought in <strong>Wazuh</strong>, an open-source SIEM
+        and intrusion detection platform, and delivered a working monitoring server with Windows and Linux
+        machines reporting to it in real time.
+      </p>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Cybersecurity Intern</dd></div>
+        <div><dt>Company</dt><dd>Value</dd></div>
+        <div><dt>Period</dt><dd>January 2026</dd></div>
+        <div><dt>Focus</dt><dd>Security monitoring</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== IMPACT ===== -->
+    <section class="container cs-section">
+      <div class="cs-scope cs-reveal">
+        <p class="cs-kicker">(Impact)</p>
+        <div class="cs-stats cs-stats--center">
+          <div><span class="cs-stat__num">3</span><span class="cs-stat__label">operating systems monitored from one dashboard</span></div>
+          <div><span class="cs-stat__num">4/4</span><span class="cs-stat__label">validation checks passed, from connection to live alerts</span></div>
+          <div><span class="cs-stat__num">0</span><span class="cs-stat__label">agents disconnected at sign-off</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BEFORE / AFTER ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(The Problem)</p>
+        <h2 class="cs-h2 cs-h2--xl">Blind Spots,<br />Then One Screen</h2>
+        <p class="cs-body">Security relied on people noticing problems. Logs stayed on each machine, so incidents surfaced late and nobody had the full picture.</p>
+      </div>
+      <div class="vl-compare cs-reveal">
+        <div class="vl-compare__col">
+          <h3>Before</h3>
+          <ul>
+            <li>Logs checked by hand, one machine at a time</li>
+            <li>Only the operating systems' built-in alerts</li>
+            <li>Incidents found when a user reported them</li>
+            <li>No overall view of the fleet's security</li>
+          </ul>
+        </div>
+        <div class="vl-compare__col vl-compare__col--after">
+          <h3>After</h3>
+          <ul>
+            <li>Every machine's logs collected on one server</li>
+            <li>Suspicious activity flagged automatically</li>
+            <li>Alerts in real time, before anyone calls IT</li>
+            <li>Fleet status, threats and reports on one dashboard</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT I OWNED ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(What I Owned)</p>
+        <ul class="cs-list">
+          <li><strong>Scoping.</strong> Turned the team's goals into functional and non-functional requirements, then broke the project into five deliverables.</li>
+          <li><strong>Design.</strong> Planned the architecture, use cases and deployment, with the security server isolated on its own virtual machine.</li>
+          <li><strong>Rollout.</strong> Brought the Wazuh server online and connected Windows and Linux machines to it.</li>
+          <li><strong>Validation.</strong> Proved the setup end to end, from agent connection to alerts on the dashboard, and documented it in a 26-page report.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PART 01 · ARCHITECTURE ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01)</p>
+        <h2 class="cs-h2 cs-h2--xl">How It<br />Fits Together</h2>
+        <p class="cs-body">One central server does the analysis. Lightweight agents on each machine stream logs and events to it over an encrypted channel, so adding a new machine means adding one more agent.</p>
+      </div>
+      <div class="cs-arch cs-reveal" role="img" aria-label="Architecture: Wazuh agents on Windows 11, CentOS Stream 9 and Ubuntu 24.04 send logs and events over a secure connection to a Linux virtual machine running the Wazuh manager and dashboard.">
+        <div class="cs-arch__row" style="--cols:2">
+          <div class="cs-arch__node cs-arch__node--hot"><b>Wazuh manager</b><span>Correlates events · runs detection rules</span></div>
+          <div class="cs-arch__node cs-arch__node--hot"><b>Wazuh dashboard</b><span>Alerts · fleet status · reports</span></div>
+        </div>
+        <div class="cs-arch__link">Linux VM · central security server</div>
+        <div class="cs-arch__link">↑ encrypted · logs &amp; events ↑</div>
+        <div class="cs-arch__row" style="--cols:3">
+          <div class="cs-arch__node"><b>Agent</b><span>Windows 11 Pro</span></div>
+          <div class="cs-arch__node"><b>Agent</b><span>CentOS Stream 9</span></div>
+          <div class="cs-arch__node"><b>Agent</b><span>Ubuntu 24.04 LTS</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 02 · COVERAGE ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 02)</p>
+        <h2 class="cs-h2 cs-h2--xl">What the Team<br />Sees Now</h2>
+        <p class="cs-body">With the agents in place, the IT team can follow six areas of security from one place.</p>
+      </div>
+      <div class="vl-tiles cs-reveal">
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" /></svg>
+          <h3>Log analysis</h3>
+          <p>System and application logs from every machine, collected and correlated in one place.</p>
+        </article>
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z" /><path d="M9 12l2 2 4-4" /></svg>
+          <h3>Intrusion detection</h3>
+          <p>Rules and signatures that flag suspicious behavior and access attempts.</p>
+        </article>
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v4h4M9 13h6M9 17h4" /></svg>
+          <h3>File integrity</h3>
+          <p>Changes to critical files and system settings are tracked and reported.</p>
+        </article>
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4M11 8v3M11 14h.01" /></svg>
+          <h3>Vulnerabilities</h3>
+          <p>Known weaknesses in installed software, with the patches still to apply.</p>
+        </article>
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8" /><path d="M10 20a2 2 0 0 0 4 0" /></svg>
+          <h3>Real-time alerts</h3>
+          <p>Incidents raised as they happen, with severity, so the team can react right away.</p>
+        </article>
+        <article class="vl-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>
+          <h3>Reports</h3>
+          <p>Dashboards and reports by machine, alert type or severity, to support decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PART 03 · PROOF ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 03)</p>
+        <h2 class="cs-h2 cs-h2--xl">Proof It<br />Works</h2>
+      </div>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(01 · First Check-in)</p>
+          <h3 class="cs-h2">A company workstation goes live</h3>
+          <p class="cs-body">The first agent came online on TS-IT-01, a Windows 11 workstation. Once it showed up as active and its events reached the dashboard, I knew the pipeline worked before scaling it out.</p>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--browser"><img src="../../images/projects/value/first-agent.webp" alt="Agent card for TS-IT-01, a Windows 11 Pro workstation, status active, with checks for registration, connection and events reaching the dashboard" width="2000" height="700" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(02 · Cross-Platform)</p>
+          <h3 class="cs-h2">Three systems, one view</h3>
+          <p class="cs-body">Windows, CentOS and Ubuntu machines report side by side, so one setup covers a mixed fleet. Each one passed the same four checks.</p>
+          <dl class="cs-facts">
+            <div><dt>Connection</dt><dd>Every agent stays linked to the server</dd></div>
+            <div><dt>Log collection</dt><dd>Test events arrive centrally</dd></div>
+            <div><dt>Detection</dt><dd>Suspicious activity raises an alert</dd></div>
+            <div><dt>Visibility</dt><dd>Alerts appear on the dashboard in real time</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--browser"><img src="../../images/projects/value/dashboard.webp" alt="Wazuh Endpoints dashboard with three active agents" width="2800" height="1260" loading="lazy" /></div>
+        </div>
+      </article>
+      <p class="cs-note">Dashboard views redrawn from the internship screenshots, with the same agents, systems and versions.</p>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Skills Proven)</p>
+        <h2 class="cs-h2">What I Bring<br />From This</h2>
+      </div>
+      <ul class="vl-skills cs-reveal">
+        <li><span>01</span><div><b>SIEM &amp; intrusion detection</b><p>Hands-on with an industry SIEM: agents, detection rules, alerts and dashboards.</p></div></li>
+        <li><span>02</span><div><b>Linux server administration</b><p>Ran and maintained the central security server on a Linux VM.</p></div></li>
+        <li><span>03</span><div><b>Cross-platform endpoints</b><p>Deployed and supported agents on Windows and two Linux distributions.</p></div></li>
+        <li><span>04</span><div><b>Requirements &amp; system design</b><p>Requirements, work breakdown, use case and deployment diagrams.</p></div></li>
+        <li><span>05</span><div><b>Testing &amp; validation</b><p>Defined checks and proved each one before calling the work done.</p></div></li>
+        <li><span>06</span><div><b>Technical writing</b><p>Documented the whole project in a 26-page report for the company and school.</p></div></li>
+      </ul>
+    </section>
+
+    <!-- ===== NEXT STEPS ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(What's Next)</p>
+        <p class="cs-body">The setup is built to grow: the next steps are rolling agents out across the rest of the company and turning on <strong>automated responses</strong>, so some threats are blocked without waiting for a person. This internship confirmed where I want to go: systems administration and cybersecurity.</p>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Tech Stack)</p>
+        <h2 class="cs-h2">Built With</h2>
+        <p class="cs-body">Open source, cross-platform and easy to extend to new machines.</p>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>Wazuh</b><span>SIEM · IDS · dashboard</span></li>
+        <li><b>Linux</b><span>Central security server</span></li>
+        <li><b>Windows · CentOS · Ubuntu</b><span>Monitored machines</span></li>
+        <li><b>Virtualization</b><span>Isolated server VM</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../atej/">
+        <span class="cs-kicker">Next Experience</span>
+        <span class="cs-next__title">ATEJ <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

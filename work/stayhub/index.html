@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StayHub - Case Study · mastouri's studio</title>
+  <meta name="description" content="StayHub: a React Native + Expo mobile app for discovering and booking unique stays, with map search, clustered price markers, a booking flow and social sign-in. Designed and built by Mastouri Dhia." />
+  <link rel="icon" type="image/svg+xml" href="../../images/projects/stayhub/stayhub-mark.svg" />
+  <link rel="canonical" href="https://your-domain.com/work/stayhub/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/stayhub/" />
+  <meta property="og:title" content="StayHub - Case Study" />
+  <meta property="og:description" content="StayHub: a React Native + Expo mobile app for discovering and booking unique stays, with map search, clustered price markers, a booking flow and social sign-in. Designed and built by Mastouri Dhia." />
+  <meta property="og:image" content="https://your-domain.com/images/social/stayhub.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/stayhub.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+</head>
+<body class="case-study">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <p class="cs-kicker">(Case Study · 01)</p>
+      <h1 class="cs-title">StayHub</h1>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>Mobile App</li>
+        <li>UX | UI</li>
+        <li>React Native</li>
+        <li>Maps &amp; Geo</li>
+        <li>Authentication</li>
+      </ul>
+      <div class="cs-hero-media">
+        <img src="../../images/projects/stayhub/hero.jpg" alt="Five StayHub screens: sign-in, listings feed, map search, destination search and a property page" width="1920" height="1080" />
+      </div>
+      <p class="cs-lead">
+        StayHub is a mobile app for discovering and booking unique places to stay. Built with React Native, Expo and TypeScript,
+        it combines a listings feed and a live map in one explore screen, a step-by-step search flow, rich property pages and
+        social sign-in - a full booking-app experience, designed and developed end to end.
+      </p>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Mobile App Design &amp; Development</dd></div>
+        <div><dt>Stack</dt><dd>React Native · Expo · TypeScript</dd></div>
+        <div><dt>Year</dt><dd>2025</dd></div>
+        <div><dt>Team</dt><dd>Solo</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== MY ROLE ===== -->
+    <section class="container cs-section--tight">
+      <div class="cs-split">
+        <p class="cs-kicker">(My Role)</p>
+        <ul class="cs-list">
+          <li>Designed and built every screen, from sign-in to the reservation footer.</li>
+          <li>Built the explore experience: categories, a draggable listings sheet and a clustered price map.</li>
+          <li>Built the search flow as a blurred modal of three collapsing steps: where, when and who.</li>
+          <li>Set up authentication with Clerk - Google, Apple and Facebook sign-in, with tokens kept in secure storage.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== APPROACH ===== -->
+    <section class="container cs-section">
+      <h2 class="cs-h2 cs-reveal">Approach</h2>
+      <div class="cs-approach">
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">01</span>
+          <h3 class="cs-step__title">Explore First</h3>
+          <p class="cs-body">The app opens straight onto stays. Search and categories sit in one sticky header, so browsing never takes more than a tap.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">02</span>
+          <h3 class="cs-step__title">Map &amp; List as One</h3>
+          <p class="cs-body">Instead of two separate views, the listings live in a bottom sheet over the map. Pull it down to see the map, swipe it up for the list.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">03</span>
+          <h3 class="cs-step__title">Search as a Flow</h3>
+          <p class="cs-body">Destination, dates and guests are three cards that open one at a time. Each finished step collapses to a one-line summary.</p>
+        </div>
+        <div class="cs-step cs-reveal">
+          <span class="cs-step__num">04</span>
+          <h3 class="cs-step__title">Motion &amp; Feel</h3>
+          <p class="cs-body">Reanimated transitions, a scroll-driven parallax header and light haptic feedback make the app feel native rather than web-like.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 01 · PRODUCT ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01)</p>
+        <h2 class="cs-h2 cs-h2--xl">The Product</h2>
+        <p class="cs-body">Five core screens cover the whole journey: sign in, browse, find on the map, search, and book.</p>
+      </div>
+
+      <div class="cs-stats cs-reveal">
+        <div><span class="cs-stat__num">5</span><span class="cs-stat__label">tabs in the main navigation</span></div>
+        <div><span class="cs-stat__num">7</span><span class="cs-stat__label">browse categories, from studios to mountain stays</span></div>
+        <div><span class="cs-stat__num">3</span><span class="cs-stat__label">social sign-in providers</span></div>
+      </div>
+
+      <div class="cs-flow-scroll" data-flow-scroll>
+      <div class="cs-flow" data-flow aria-label="StayHub journey, step by step">
+        <ol class="cs-flow__steps">
+          <li><button type="button" class="cs-flow__step is-active"><span class="cs-flow__num">01</span><span><b>Sign in</b><small>Email, phone, Apple, Google or Facebook - the login opens on its own when you're signed out.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">02</span><span><b>Explore</b><small>Browse stays by category in a draggable sheet, with photos, ratings and nightly prices.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">03</span><span><b>Find on the map</b><small>Pull the sheet down: listings cluster into counts and split into price markers as you zoom.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">04</span><span><b>Search</b><small>Where, when and who - three cards over a blurred background, one open at a time.</small></span><span class="cs-flow__bar"></span></button></li>
+          <li><button type="button" class="cs-flow__step"><span class="cs-flow__num">05</span><span><b>Book the stay</b><small>A parallax photo header, host details, and the price with a reserve button pinned at the bottom.</small></span><span class="cs-flow__bar"></span></button></li>
+        </ol>
+        <div class="cs-flow__stage">
+          <div class="cs-flow__screens cs-flow__screens--framed">
+            <img class="is-active" src="../../images/projects/stayhub/login.webp" alt="Sign-in modal with email, phone, Apple, Google and Facebook options" width="522" height="1015" loading="lazy" />
+            <img src="../../images/projects/stayhub/explore.webp" alt="Explore feed with category tabs and a listing card" width="522" height="1015" loading="lazy" />
+            <img src="../../images/projects/stayhub/map.webp" alt="Map of Berlin with clustered listing counts and price markers" width="522" height="1015" loading="lazy" />
+            <img src="../../images/projects/stayhub/search.webp" alt="Search modal with destination, dates and guests cards" width="522" height="1015" loading="lazy" />
+            <img src="../../images/projects/stayhub/listing.webp" alt="Property page with photo header, host details and reserve button" width="522" height="1015" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== PART 02 · SYSTEMS ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 02)</p>
+        <h2 class="cs-h2 cs-h2--xl">Under the Hood</h2>
+        <p class="cs-body">How the key screens were built: the problem each one solves and the tools behind it.</p>
+      </div>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 01 · Map Exploration)</p>
+          <h3 class="cs-h2">Hundreds of homes, one readable map</h3>
+          <p class="cs-body">Showing every listing as a pin turns a city into noise. Nearby listings merge into white count bubbles that split apart as you zoom in, until each one becomes a price marker. Tapping a price opens that listing.</p>
+          <dl class="cs-facts">
+            <div><dt>Clustering</dt><dd>react-native-map-clustering with a custom cluster renderer</dd></div>
+            <div><dt>Location</dt><dd>“Locate me” centres the map on the user via expo-location</dd></div>
+            <div><dt>Data</dt><dd>GeoJSON listings feed rendered as markers</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <img src="../../images/projects/stayhub/map.webp" alt="Clustered map view" width="522" height="1015" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 02 · Search Flow)</p>
+          <h3 class="cs-h2">Where, when, who - one step at a time</h3>
+          <p class="cs-body">Search opens as a transparent modal over a blurred explore screen, so you never lose your place. Only one card is open at a time; the others collapse to a one-line summary you can tap to go back.</p>
+          <dl class="cs-facts">
+            <div><dt>Where</dt><dd>Destination search with visual region picks</dd></div>
+            <div><dt>When</dt><dd>Inline calendar date picker</dd></div>
+            <div><dt>Who</dt><dd>Adults, children, infants and pets counters</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <img src="../../images/projects/stayhub/search.webp" alt="Search modal" width="522" height="1015" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 03 · Listing Page)</p>
+          <h3 class="cs-h2">A property page that moves with you</h3>
+          <p class="cs-body">The photo header scales and slides with the scroll position, and a solid header fades in once the image is gone. Price and the reserve button stay pinned to the bottom, and the native share sheet is one tap away.</p>
+          <dl class="cs-facts">
+            <div><dt>Parallax</dt><dd>Reanimated scroll offset, interpolated</dd></div>
+            <div><dt>Actions</dt><dd>Share, save and reserve</dd></div>
+            <div><dt>Routing</dt><dd>Dynamic route per listing with Expo Router</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <img src="../../images/projects/stayhub/listing.webp" alt="Listing details page" width="522" height="1015" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(System 04 · Authentication)</p>
+          <h3 class="cs-h2">Sign in without friction</h3>
+          <p class="cs-body">If you're not signed in when the app starts, the login modal opens on its own. Google, Apple and Facebook run through Clerk OAuth, and session tokens are cached in the device's secure store.</p>
+          <dl class="cs-facts">
+            <div><dt>Provider</dt><dd>Clerk (@clerk/clerk-expo)</dd></div>
+            <div><dt>Storage</dt><dd>expo-secure-store token cache</dd></div>
+            <div><dt>Profile</dt><dd>Editable name and avatar from the photo library</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <img src="../../images/projects/stayhub/login.webp" alt="Sign-in modal" width="522" height="1015" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Tech Stack)</p>
+        <h2 class="cs-h2">Built With</h2>
+        <p class="cs-body">TypeScript throughout, with file-based routing and native modules from the Expo ecosystem.</p>
+      </div>
+      <ul class="cs-stack cs-reveal">
+        <li><b>React Native</b><span>Cross-platform UI</span></li>
+        <li><b>Expo</b><span>Tooling &amp; native modules</span></li>
+        <li><b>TypeScript</b><span>Typed codebase</span></li>
+        <li><b>Expo Router</b><span>File-based navigation</span></li>
+        <li><b>Clerk</b><span>Auth &amp; OAuth</span></li>
+        <li><b>React Native Maps</b><span>Map &amp; clustering</span></li>
+        <li><b>Reanimated</b><span>Animations &amp; parallax</span></li>
+        <li><b>Bottom Sheet</b><span>Draggable listings</span></li>
+      </ul>
+      <a class="cs-btn" href="https://github.com/mastouridhia/StayHub" target="_blank" rel="noopener noreferrer">View the code on GitHub <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../orvexa/">
+        <span class="cs-kicker">Next Project</span>
+        <span class="cs-next__title">Orvexa <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

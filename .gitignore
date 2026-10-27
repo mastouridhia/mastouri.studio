@@ -1,0 +1,11 @@
+# Personal documents
+*.pdf
+
+# Local editor / tool settings
+.claude/settings.local.json
+.vscode/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store

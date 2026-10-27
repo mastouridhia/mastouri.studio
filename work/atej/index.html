@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATEJ - Case Study · mastouri's studio</title>
+  <meta name="description" content="atej.tn: the WordPress website Mastouri Dhia built for ATEJ, a Tunisian youth association, during a first internship in January 2024." />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="canonical" href="https://your-domain.com/work/atej/" />
+
+  <!-- Social sharing (replace your-domain.com with the live domain) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:url" content="https://your-domain.com/work/atej/" />
+  <meta property="og:title" content="ATEJ - Case Study" />
+  <meta property="og:description" content="atej.tn: the WordPress website Mastouri Dhia built for ATEJ, a Tunisian youth association, during a first internship in January 2024." />
+  <meta property="og:image" content="https://your-domain.com/images/social/atej.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://your-domain.com/images/social/atej.jpg" />
+
+  <!-- Local fonts (from Next.js export) -->
+  <link rel="preload" href="../../fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/archivo.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="../../fonts/space-grotesk.woff2" as="font" crossorigin type="font/woff2" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+  <style>
+    /* Brand colors from the A-TEJ logo: deep navy with a gold crown */
+    .case-study--atej {
+      --cs-brand: #2b28a0;
+      --cs-film-bg: #0f0e24;
+    }
+    .case-study--atej .cs-film::before {
+      background: radial-gradient(closest-side, rgba(75, 71, 220, .4), transparent);
+    }
+    .case-study--atej .cs-film::after {
+      background: radial-gradient(closest-side, rgba(242, 184, 48, .2), transparent);
+    }
+    .case-study--atej .cs-live-dot {
+      background: #f2b830;
+      box-shadow: 0 0 0 0 rgba(242, 184, 48, .6);
+    }
+    /* Browser and phone side by side on the dark stage */
+    .case-study--atej .cs-film .device--browser {
+      flex: 1 1 auto;
+      min-width: 0;
+      width: auto;
+      margin-inline: 0;
+    }
+    .case-study--atej .cs-system__media {
+      background: linear-gradient(160deg, #f1f1ff 0%, #c9c8f3 100%);
+      padding: clamp(2rem, 4vw, 3rem);
+    }
+    .case-study--atej .cs-system__media .device--browser img { width: 100%; }
+    .case-study--atej .cs-system__media .device--phone { box-shadow: 0 30px 60px rgba(30, 27, 110, .28), 0 0 0 1px rgba(0, 0, 0, .06); }
+    @media (max-width: 760px) {
+      .case-study--atej .cs-film .device--phone { display: none; }
+      .case-study--atej .cs-film .device--browser { width: 100%; }
+    }
+  </style>
+</head>
+<body class="case-study case-study--atej">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="../../index.html" class="nav-logo" aria-label="Mastouri's Studio home">
+        MASTOURI.STUDIO
+      </a>
+      <button class="nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Full-screen menu overlay ===== -->
+  <div class="menu-scrim" data-menu-scrim></div>
+  <nav class="site-menu" id="site-menu" data-menu aria-hidden="true">
+    <div class="container">
+      <ul class="menu-list">
+        <li><a href="../../index.html#top" data-menu-link data-hw><span class="hw-text" data-hw-text>Home</span></a></li>
+        <li><a href="../../index.html#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
+        <li><a href="../../index.html#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
+        <li><a href="../../index.html#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
+        <li><a href="../../index.html#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
+        <li><a href="../../index.html#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+      </ul>
+      <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
+    </div>
+  </nav>
+
+  <main id="main" class="cs-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="container" id="top">
+      <img class="cs-brandmark cs-brandmark--wide" src="../../images/projects/atej/atej-logo.png" alt="ATEJ logo" width="1024" height="497" />
+      <p class="cs-kicker">(Experience · ATEJ)</p>
+      <h1 class="cs-title">atej.tn</h1>
+      <ul class="cs-chips" aria-label="Disciplines">
+        <li>WordPress</li>
+        <li>Website</li>
+        <li>Arabic · RTL</li>
+        <li>Responsive</li>
+      </ul>
+      <p class="cs-award">Web Developer Intern · January 2024</p>
+
+      <div class="cs-film" aria-label="The atej.tn home page on desktop and on a phone">
+        <div class="device device--browser">
+          <img src="../../images/projects/atej/home.webp" alt="atej.tn on desktop: Arabic navigation, the A-TEJ logo, a hero photo of young people writing on a poster, and counters for branches, projects, adolescents and youth" width="1440" height="900" />
+        </div>
+        <div class="device device--phone">
+          <img src="../../images/projects/atej/home-mobile.png" alt="atej.tn on a phone: the logo, a menu button and the hero headline wrapped over several lines" width="390" height="844" />
+        </div>
+        <p class="cs-film__caption"><span class="cs-live-dot" aria-hidden="true"></span>Live at atej.tn</p>
+      </div>
+
+      <p class="cs-lead">
+        ATEJ (Association Tunisienne de l'Enfance et de la Jeunesse) is a Tunisian youth association that runs
+        projects with children, adolescents and young people. In January 2024, for my first internship, I built
+        their website with WordPress. It was the first site I shipped for a real organization, and it is still online.
+      </p>
+      <a class="cs-btn" href="https://atej.tn" target="_blank" rel="noopener">Visit atej.tn <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <!-- ===== META ===== -->
+    <section class="container cs-section--tight">
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Web Developer Intern</dd></div>
+        <div><dt>Client</dt><dd>ATEJ</dd></div>
+        <div><dt>Period</dt><dd>January 2024</dd></div>
+        <div><dt>Stack</dt><dd>WordPress</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== ROLE / PROBLEM / RESULT ===== -->
+    <section class="container cs-section">
+      <div class="cs-split cs-reveal">
+        <p class="cs-kicker">(My Role)</p>
+        <ul class="cs-list">
+          <li>Built the association's website in WordPress and put it live at atej.tn.</li>
+          <li>Organized their content into five pages: home, about, team, latest news and contact.</li>
+          <li>Worked with Arabic, right-to-left content on desktop and on phones.</li>
+        </ul>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Brief)</p>
+        <p class="cs-body">ATEJ needed one place online that explains who they are, shows their projects and partners, and lets people follow their news and reach them. Most visitors are young people on their phones, and the content is in Arabic, written in a friendly Tunisian voice.</p>
+      </div>
+      <div class="cs-split cs-reveal" style="margin-top:2.5rem">
+        <p class="cs-kicker">(The Result)</p>
+        <p class="cs-body">A live website at <strong>atej.tn</strong> that the association uses to present its work. It was my first real client project: the first time I built for someone else's content, audience and language instead of my own.</p>
+      </div>
+    </section>
+
+    <!-- ===== PART 01 · THE SITE ===== -->
+    <section class="container cs-section">
+      <div class="cs-part cs-reveal">
+        <p class="cs-kicker">(Part 01)</p>
+        <h2 class="cs-h2 cs-h2--xl">What's<br />on the Site</h2>
+        <p class="cs-body">The home page carries most of the story. The other pages go deeper on the team, the association and its news.</p>
+      </div>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(01 · Home)</p>
+          <h3 class="cs-h2">Who they are, at a glance</h3>
+          <p class="cs-body">A full-width photo from one of the association's workshops sits behind the headline, "an inclusive youth association for all age groups". Below it, animated counters show the association's reach, followed by its main goals, a gallery of projects and the partners' logos.</p>
+          <dl class="cs-facts">
+            <div><dt>Counters</dt><dd>Branches, completed projects, adolescents, youth</dd></div>
+            <div><dt>Sections</dt><dd>Goals · projects gallery · partners</dd></div>
+            <div><dt>Links</dt><dd>Facebook, Instagram, LinkedIn</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--browser"><img src="../../images/projects/atej/home.webp" alt="atej.tn home page on desktop with the hero photo and four counters" width="1440" height="900" loading="lazy" /></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container cs-section--tight">
+      <article class="cs-system cs-system--flip cs-reveal">
+        <div class="cs-system__copy">
+          <p class="cs-kicker">(02 · Mobile)</p>
+          <h3 class="cs-h2">Arabic first, phone first</h3>
+          <p class="cs-body">The whole site reads right to left. On a phone, the navigation folds into a menu button, the headline wraps to fit the screen and the call to action to the latest news stays large enough to tap.</p>
+          <dl class="cs-facts">
+            <div><dt>Direction</dt><dd>Right to left, Arabic</dd></div>
+            <div><dt>Navigation</dt><dd>Five pages, menu button on mobile</dd></div>
+            <div><dt>Pages</dt><dd>Home · About · Team · News · Contact</dd></div>
+          </dl>
+        </div>
+        <div class="cs-system__media">
+          <div class="device device--phone"><img src="../../images/projects/atej/home-mobile.png" alt="atej.tn home page on a phone" width="390" height="844" loading="lazy" /></div>
+        </div>
+      </article>
+      <p class="cs-note">Screenshots taken from the live site at atej.tn.</p>
+    </section>
+
+    <!-- ===== NEXT ===== -->
+    <section class="container">
+      <a class="cs-next" href="../freshstockai/">
+        <span class="cs-kicker">Next Experience</span>
+        <span class="cs-next__title">FreshStockAI <span class="cs-next__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-container">
+        <a class="footer-wordmark" href="../../index.html" aria-label="Mastouri Studio home">
+          MASTOURI.STUDIO
+        </a>
+        <div class="footer-main">
+          <p class="footer-cta">Built on logic.<br />Driven by curiosity.</p>
+          <div class="footer-links">
+            <a href="mailto:contactmastourid@gmail.com" class="footer-email">CONTACTMASTOURID@GMAIL.COM</a>
+            <nav class="footer-socials" aria-label="Social media">
+
+              <a href="https://github.com/mastouridhia" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.57 9.57 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.57c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mastouri-dhia" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path class="footer-icon-cutout" d="M7 10h3v8H7zm1.5-4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 10h2.9v1.1a3.2 3.2 0 0 1 2.7-1.4c2.3 0 3.4 1.4 3.4 4V18h-3v-3.8c0-1.2-.3-2-1.5-2s-1.6.9-1.6 2V18h-3z" /></svg>
+              </a>
+
+              <a href="https://www.pinterest.com/dhiamastouri30/" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M10 20c1-2.2 1.3-4.3 1.8-6.3m-.4 1c.5 1 1.4 1.5 2.6 1.5 2.4 0 4-2.2 4-5.2 0-2.5-1.8-4.4-4.8-4.4-3.5 0-5.5 2.3-5.5 5 0 1.3.5 2.5 1.6 2.9" /></svg>
+              </a>
+              <a href="https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M7 9.6c3.3-1 7-.7 10 1M7.6 12.7c2.7-.8 5.6-.5 8 .9M8.2 15.6c2.1-.6 4.3-.4 6.1.7" /></svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© 2026 Mastouri Studio. All rights reserved.</p>
+          <p class="footer-credit">Designed and built by Mastouri Dhia.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

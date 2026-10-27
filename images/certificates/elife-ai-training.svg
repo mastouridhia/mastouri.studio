@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b6cff"/>
+      <stop offset="1" stop-color="#2b2f9e"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="440" fill="url(#bg)"/>
+  <circle cx="560" cy="380" r="210" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2"/>
+  <circle cx="560" cy="380" r="150" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2"/>
+  <!-- spark motif -->
+  <g fill="#fff">
+    <path d="M100 40c4 30 18 44 48 48-30 4-44 18-48 48-4-30-18-44-48-48 30-4 44-18 48-48Z"/>
+    <path d="M176 44c2 14 8 20 22 22-14 2-20 8-22 22-2-14-8-20-22-22 14-2 20-8 22-22Z" fill-opacity=".7"/>
+  </g>
+  <text x="56" y="250" fill="#fff" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="4">AI TRAINING</text>
+  <text x="52" y="340" fill="#fff" font-family="Helvetica Neue, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-3">Introduction to AI</text>
+  <text x="56" y="396" fill="#fff" fill-opacity=".8" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" letter-spacing="3">ELIFE SIDI BOUZID · MASTOURI DHIA</text>
+</svg>

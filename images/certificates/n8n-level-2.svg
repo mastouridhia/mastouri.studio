@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2a3a"/>
+      <stop offset="1" stop-color="#101018"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="440" fill="url(#bg)"/>
+  <circle cx="560" cy="380" r="210" fill="none" stroke="#ea4b71" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="560" cy="380" r="150" fill="none" stroke="#ea4b71" stroke-opacity=".35" stroke-width="2"/>
+  <!-- node-graph motif -->
+  <g fill="none" stroke="#ea4b71" stroke-width="6" stroke-linecap="round">
+    <path d="M86 92h46M168 92c30 0 30-26 60-26M168 92c30 0 30 26 60 26M264 66c30 0 30 26 60 26M264 118c30 0 30-26 60-26"/>
+  </g>
+  <g fill="#ea4b71">
+    <circle cx="68" cy="92" r="18"/>
+    <circle cx="150" cy="92" r="18"/>
+    <circle cx="246" cy="66" r="18"/>
+    <circle cx="246" cy="118" r="18"/>
+    <circle cx="342" cy="92" r="18"/>
+  </g>
+  <text x="56" y="250" fill="#ea4b71" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="4">N8N COURSE</text>
+  <text x="52" y="350" fill="#fff" font-family="Helvetica Neue, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-4">Level 2</text>
+  <text x="56" y="396" fill="#fff" fill-opacity=".7" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" letter-spacing="3">COMPLETED · MASTOURI DHIA</text>
+</svg>
