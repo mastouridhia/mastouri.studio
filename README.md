@@ -99,18 +99,18 @@ Add one `<li class="cert">` inside `.certs-list` in `index.html`.
 1. Push this repo to GitHub, then in Netlify: **Add new site → Import an existing project**
    and pick the repo. No build command; `netlify.toml` already sets the publish folder.
    (Deploying from Git keeps `.vscode/`, `.claude/` and other git-ignored files off the site.)
-2. Once you know the live address, replace the placeholder `your-domain.com` everywhere
-   (page `<head>` tags, `sitemap.xml`, `robots.txt`) with it, e.g. from Git Bash:
+2. The live address is **https://mastouristudio.netlify.app/**. It's written into the page `<head>`
+   tags, `sitemap.xml`, `robots.txt` and the analytics `data-domains`. If it ever changes
+   (e.g. a custom domain), replace it everywhere from Git Bash, then commit and push:
    ```bash
-   grep -rl "your-domain.com" --include=*.html --include=*.xml --include=*.txt . \
-     | xargs sed -i "s#your-domain.com#mastouri.netlify.app#g"
+   grep -rl "mastouristudio.netlify.app" --include=*.html --include=*.xml --include=*.txt . \
+     | xargs sed -i "s#mastouristudio.netlify.app#new-domain.com#g"
    ```
-   Then commit and push. (This also switches on analytics, which only counts visits on that domain.)
 3. **Analytics:** Umami Cloud ([cloud.umami.is](https://cloud.umami.is)) is already set up on every
    page with the site's Website ID. In the Umami dashboard, set the website's domain to the live one.
    Besides page views, it records: contact form sends (with the topic picked), email clicks,
    case-study opens, outbound links (GitHub, LinkedIn, atej.tn…) and "Step inside".
-4. Submit `https://<your-domain>/sitemap.xml` in
+4. Submit `https://mastouristudio.netlify.app/sitemap.xml` in
    [Google Search Console](https://search.google.com/search-console).
 
 ---
