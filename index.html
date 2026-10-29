@@ -120,8 +120,8 @@
         <li><a href="#experience" data-menu-link data-hw><span class="hw-text" data-hw-text>Experience</span></a></li>
         <li><a href="#projects" data-menu-link data-hw><span class="hw-text" data-hw-text>Projects</span></a></li>
         <li><a href="#certificates" data-menu-link data-hw><span class="hw-text" data-hw-text>Certificates</span></a></li>
-        <li><a href="#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
         <li><a href="#contact-form" data-menu-link data-hw><span class="hw-text" data-hw-text>Contact</span></a></li>
+        <li><a href="#outside" data-menu-link data-hw><span class="hw-text" data-hw-text>Outside the Frame</span></a></li>
       </ul>
       <a href="mailto:contactmastourid@gmail.com" class="menu-email" data-menu-link>contactmastourid@gmail.com</a>
     </div>
@@ -593,74 +593,6 @@
       <div class="certs-preview" data-certs-preview aria-hidden="true"></div>
     </section>
 
-    <!-- ===== SOUND GATE ===== -->
-    <!-- Browsers keep a page silent until the visitor clicks, so ask here,
-         just before the mirror. Shown by js/main.js (18); same switch as
-         the sound button inside the section. -->
-    <section class="otf-gate" aria-label="Sound for the next section" data-otf-gate hidden>
-      <div class="container otf-gate__inner">
-        <p class="section-label otf-gate__label">(Before you step in)</p>
-        <p class="otf-gate__title">The next part has <span class="otf-gate__neon">sound</span></p>
-        <p class="otf-gate__text" data-otf-gate-text>Turn it on for the full experience. Headphones recommended.</p>
-        <div class="otf-gate__actions">
-          <button class="otf-gate__on" type="button" aria-pressed="false" data-otf-gate-on>
-            <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <span data-otf-gate-label>Turn sound on</span>
-          </button>
-          <button class="otf-gate__off" type="button" data-otf-gate-off>Continue without sound</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== OUTSIDE THE FRAME ===== -->
-    <!-- A black mirror. Scrolling pins the stage, a web of cracks spreads
-         one crack at a time, then the glass breaks once (it stays broken
-         until the page is reloaded), red light leaks
-         through the cracks, the title ignites and "Step inside" dissolves
-         everything into red, into the Outside page. All drawing is in js/main.js (18).
-         Song: put an mp3 at audio/outside-theme.mp3 (or change data-otf-song).
-         Crack: the hit in data-otf-fx plays when the glass breaks.
-         Look: the painted vines, tissue and glass are in data-otf-tex.
-         Second take, parked for now (OTF_RIFT_ON in js/main.js; .otf--rift): a photograph
-         of a burning tear in the ground (images/otf/rift-close.webp) that
-         heats up with the scroll, erupts, and dives you into its core.
-         ?take=rift or ?take=mirror in the URL forces one. -->
-    <section id="outside" class="otf" data-otf data-otf-song="audio/outside-theme.mp3" data-otf-fx="audio/black-mirror.mp3" data-otf-tex="images/otf/">
-      <div class="otf-stage" data-otf-stage>
-        <div class="otf-scene" data-otf-scene>
-          <div class="otf-world" aria-hidden="true"></div>
-          <div class="otf-glass" aria-hidden="true"></div>
-          <!-- The rift only: the tear at full heat, its glow, and the speed smear of the dive -->
-          <div class="otf-heat" aria-hidden="true"></div>
-          <div class="otf-bloom" aria-hidden="true"></div>
-          <div class="otf-smear" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="otf-sheen" aria-hidden="true"></div>
-          <canvas class="otf-cracks" aria-hidden="true" data-otf-cracks></canvas>
-          <div class="otf-glow" aria-hidden="true"><canvas data-otf-glow></canvas></div>
-          <canvas class="otf-shards" aria-hidden="true" data-otf-shards></canvas>
-          <div class="otf-glitch" aria-hidden="true" data-otf-glitch></div>
-          <canvas class="otf-fx" aria-hidden="true" data-otf-fx></canvas>
-
-          <div class="otf-copy">
-            <p class="section-label otf-label">(PERSONAL · MY SPACE)</p>
-            <h2 class="otf-title" aria-label="Outside the Frame" data-otf-title>Outside the Frame</h2>
-          </div>
-          <!-- The red hole in the glass is the way in: it beats like a heart -->
-          <a class="otf-cta" href="outside/" aria-label="Step inside: the Outside the Frame page" data-otf-cta></a>
-        </div>
-
-        <div class="otf-grain" aria-hidden="true"></div>
-        <div class="otf-scan" aria-hidden="true"></div>
-        <div class="otf-vignette" aria-hidden="true"></div>
-        <div class="otf-flash" aria-hidden="true"></div>
-        <button class="otf-sound" type="button" aria-pressed="false" data-otf-sound hidden>
-          <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-          <span data-otf-sound-label>Tap for sound</span>
-        </button>
-      </div>
-      <div class="otf-portal" aria-hidden="true" data-otf-portal></div>
-    </section>
-
 <!-- ===== CONTACT FORM ===== -->
 <section id="contact-form" class="contact">
   <div class="container contact-inner">
@@ -776,6 +708,74 @@
     </form>
   </div>
 </section>
+
+    <!-- ===== SOUND GATE ===== -->
+    <!-- Browsers keep a page silent until the visitor clicks, so ask here,
+         just before the mirror. Shown by js/main.js (18); same switch as
+         the sound button inside the section. -->
+    <section class="otf-gate" aria-label="Sound for the next section" data-otf-gate hidden>
+      <div class="container otf-gate__inner">
+        <p class="section-label otf-gate__label">(Before you step in)</p>
+        <p class="otf-gate__title">The next part has <span class="otf-gate__neon">sound</span></p>
+        <p class="otf-gate__text" data-otf-gate-text>Turn it on for the full experience. Headphones recommended.</p>
+        <div class="otf-gate__actions">
+          <button class="otf-gate__on" type="button" aria-pressed="false" data-otf-gate-on>
+            <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span data-otf-gate-label>Turn sound on</span>
+          </button>
+          <button class="otf-gate__off" type="button" data-otf-gate-off>Continue without sound</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OUTSIDE THE FRAME ===== -->
+    <!-- A black mirror. Scrolling pins the stage, a web of cracks spreads
+         one crack at a time, then the glass breaks once (it stays broken
+         until the page is reloaded), red light leaks
+         through the cracks, the title ignites and "Step inside" dissolves
+         everything into red, into the Outside page. All drawing is in js/main.js (18).
+         Song: put an mp3 at audio/outside-theme.mp3 (or change data-otf-song).
+         Crack: the hit in data-otf-fx plays when the glass breaks.
+         Look: the painted vines, tissue and glass are in data-otf-tex.
+         Second take, parked for now (OTF_RIFT_ON in js/main.js; .otf--rift): a photograph
+         of a burning tear in the ground (images/otf/rift-close.webp) that
+         heats up with the scroll, erupts, and dives you into its core.
+         ?take=rift or ?take=mirror in the URL forces one. -->
+    <section id="outside" class="otf" data-otf data-otf-song="audio/outside-theme.mp3" data-otf-fx="audio/black-mirror.mp3" data-otf-tex="images/otf/">
+      <div class="otf-stage" data-otf-stage>
+        <div class="otf-scene" data-otf-scene>
+          <div class="otf-world" aria-hidden="true"></div>
+          <div class="otf-glass" aria-hidden="true"></div>
+          <!-- The rift only: the tear at full heat, its glow, and the speed smear of the dive -->
+          <div class="otf-heat" aria-hidden="true"></div>
+          <div class="otf-bloom" aria-hidden="true"></div>
+          <div class="otf-smear" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="otf-sheen" aria-hidden="true"></div>
+          <canvas class="otf-cracks" aria-hidden="true" data-otf-cracks></canvas>
+          <div class="otf-glow" aria-hidden="true"><canvas data-otf-glow></canvas></div>
+          <canvas class="otf-shards" aria-hidden="true" data-otf-shards></canvas>
+          <div class="otf-glitch" aria-hidden="true" data-otf-glitch></div>
+          <canvas class="otf-fx" aria-hidden="true" data-otf-fx></canvas>
+
+          <div class="otf-copy">
+            <p class="section-label otf-label">(PERSONAL · MY SPACE)</p>
+            <h2 class="otf-title" aria-label="Outside the Frame" data-otf-title>Outside the Frame</h2>
+          </div>
+          <!-- The red hole in the glass is the way in: it beats like a heart -->
+          <a class="otf-cta" href="outside/" aria-label="Step inside: the Outside the Frame page" data-otf-cta></a>
+        </div>
+
+        <div class="otf-grain" aria-hidden="true"></div>
+        <div class="otf-scan" aria-hidden="true"></div>
+        <div class="otf-vignette" aria-hidden="true"></div>
+        <div class="otf-flash" aria-hidden="true"></div>
+        <button class="otf-sound" type="button" aria-pressed="false" data-otf-sound hidden>
+          <span class="otf-sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span data-otf-sound-label>Tap for sound</span>
+        </button>
+      </div>
+      <div class="otf-portal" aria-hidden="true" data-otf-portal></div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer id="contact" class="footer">
