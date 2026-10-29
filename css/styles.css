@@ -731,7 +731,6 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 .xp {
   --xp-rule: #d6d2ca;
   --xp-brand: #d62f5c;
-  --xp-mint: #21b495;
   --xp-pink: #e84471;
   padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--color-canvas);
@@ -772,17 +771,6 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   font-size: .75rem;
   letter-spacing: .05em;
   text-transform: uppercase;
-}
-.xp-dot {
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  background: var(--xp-mint);
-  box-shadow: 0 0 0 0 rgba(33, 180, 149, .6);
-  animation: xp-live 1.8s ease-out infinite;
-}
-@keyframes xp-live {
-  to { box-shadow: 0 0 0 .55rem rgba(33, 180, 149, 0); }
 }
 .xp-role__head {
   display: flex;
@@ -956,7 +944,6 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   .xp-case__media { flex: none; aspect-ratio: 3 / 2; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .xp-dot { animation: none; }
   .xp-case,
   .xp-case__screen,
   .xp-case__cta span { transition: none; }
