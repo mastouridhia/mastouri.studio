@@ -3,18 +3,6 @@
    Builds on case-study.css (cs-kicker, cs-title, cs-h2, cs-reveal…)
    ============================================================ */
 
-/* ---------- "Right now" strip ---------- */
-.of-now {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: clamp(2rem, 4vw, 3.5rem);
-  border: 1px solid var(--color-rule);
-  background: var(--color-rule);
-}
-.of-now > div { padding: 1.25rem; background: var(--color-canvas); }
-.of-now dt,
-.of-bits dt,
 .of-card__label,
 .of-specs dt {
   font-family: var(--font-label);
@@ -23,8 +11,6 @@
   text-transform: uppercase;
   color: var(--color-muted);
 }
-.of-now dd { margin-top: .35rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
-@media (min-width: 900px) { .of-now { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* ---------- Section heads ---------- */
 .of-head {
@@ -39,9 +25,7 @@
 }
 @media (min-width: 900px) {
   .of-head { grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 22rem); align-items: end; }
-  .of-head .cs-body { justify-self: end; text-align: right; }
-  .of-head .of-follow { grid-column: 3; justify-self: end; }
-}
+  .of-head .cs-body { justify-self: end; text-align: right; }}
 
 /* ---------- Card grids ---------- */
 .of-grid { display: grid; gap: clamp(1rem, 2vw, 1.5rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -67,6 +51,7 @@
 /* Shorter posters on wide screens so the whole section fits in one screen */
 @media (min-width: 900px) { .of-grid--poster .of-card__media { aspect-ratio: 3 / 4; } }
 .of-grid--wide .of-card__media { aspect-ratio: 4 / 3; }
+.of-grid--garage .of-card__media { aspect-ratio: 3 / 4; background: #000; }
 .of-grid--games .of-card__media { aspect-ratio: 16 / 9; }
 
 /* ---------- Discord (games) ---------- */
@@ -89,20 +74,15 @@
   color: var(--color-muted);
 }
 .of-discord__name { font-family: var(--font-display); font-weight: 500; color: #8c96ff; }
+/* Same pill under the music records, in Spotify green */
+.of-discord--spotify:hover { border-color: #1db954; }
+.of-discord--spotify .of-discord__name { color: #1ed760; }
 .of-card__media img {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 900ms var(--ease);
 }
-.of-card:hover .of-card__media img { transform: scale(1.05); }.of-card__media--space {
-  background:
-    radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 70% 20%, #fff 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 40% 75%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 85% 65%, #fff 50%, transparent 51%),
-    radial-gradient(60% 60% at 75% 80%, #3949ab 0%, transparent 70%),
-    #05060f;
-}
+.of-card:hover .of-card__media img { transform: scale(1.05); }
 .of-card__title { margin-top: .3rem; font-family: var(--font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; line-height: 1.15; }
 .of-card__note { margin-top: .3rem; font-size: .9rem; color: var(--color-muted); }
 
@@ -334,18 +314,6 @@
 }
 .of-specs dd { margin-top: .2rem; font-family: var(--font-display); font-weight: 500; }
 
-/* ---------- Bits & pieces ---------- */
-.of-bits { display: grid; border-top: 1px solid var(--color-rule); }
-.of-bits > div {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--color-rule);
-}
-.of-bits dd { font-family: var(--font-display); font-size: clamp(1.05rem, 1.8vw, 1.5rem); font-weight: 500; text-align: right; }
-@media (min-width: 900px) {
-  .of-bits { grid-template-columns: 1fr 1fr; column-gap: 3rem; }
-}
-
 /* ---------- Outro ---------- */
 .of-outro { text-align: center; }
 .of-outro__title {
@@ -360,20 +328,7 @@
   display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 2.5rem;
   margin-top: 2.5rem;
 }
-/* Spotify link under the music heading's blurb. While a song plays it
-   names the song (inline script) and its bars wake up */
-.of-follow { justify-self: start; display: inline-flex; align-items: center; }
-.of-follow .of-eq {
-  width: 0; margin-right: 0; opacity: 0; overflow: hidden;
-  transition: width 300ms var(--ease), margin 300ms var(--ease), opacity 300ms var(--ease);
-}
-.of-follow.is-live { color: var(--color-accent); border-color: var(--color-accent); }
-.of-follow.is-live .of-eq { width: 12px; margin-right: .5rem; opacity: 1; }
-.of-follow.is-live .of-eq i { animation: of-eq 900ms ease-in-out infinite alternate; }
-.of-follow__text { margin-right: .35em; transition: opacity 150ms var(--ease); }
-.of-follow__text.is-swapping { opacity: 0; }
-.of-outro__links a,
-.of-follow {
+.of-outro__links a {
   padding-bottom: .2rem;
   font-family: var(--font-label);
   font-size: .8rem;
@@ -382,8 +337,7 @@
   border-bottom: 1px solid var(--color-rule);
   transition: border-color 300ms var(--ease), color 300ms var(--ease);
 }
-.of-outro__links a:hover,
-.of-follow:hover { color: var(--color-accent); border-color: var(--color-accent); }
+.of-outro__links a:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .upside .of-outro__title { text-shadow: 0 0 60px rgba(229, 57, 53, .25); }
 
 /* ============================================================
@@ -422,8 +376,6 @@
   background: rgba(11, 7, 8, .82);
   box-shadow: 0 1px 0 rgba(239, 230, 226, .08);
 }
-.upside .of-now > div { background: #110a0b; }
-.upside .of-now dt { color: var(--color-accent); }
 .upside .of-card__media { filter: saturate(.8) brightness(.9); }
 .upside .of-band { background: #050304; }
 .upside .footer { background: #050304; }

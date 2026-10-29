@@ -9,3 +9,6 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Separate tool kept next to the site, not part of it
+ai-job-search/

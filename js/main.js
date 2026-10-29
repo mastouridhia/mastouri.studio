@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run each init in its own try/catch so one failure doesn't break the rest
   const inits = [
     initIntroLoader,
+    initHeroHire,
     initMenu,
     initHeroParallax,
     initWaveReveal,
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initContactForm,
     initCaseVideos,
     initCaseFlows,
+    initAnalytics,
   ];
   inits.forEach((fn) => {
     try {
@@ -64,6 +66,7 @@ function initIntroLoader() {
   } catch (err) {}
   if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     loader.remove();
+    heroReady();
     return;
   }
 
@@ -85,9 +88,58 @@ function initIntroLoader() {
   const hideLoader = () => {
     clearInterval(imageInterval);
     loader.classList.add("is-hidden");
+    heroReady();
     setTimeout(() => loader.remove(), 500);
   };
   setTimeout(hideLoader, 3000);
+}
+
+// The hero's late arrivals (the "available for work" lines) wait for
+// this: two frames so their hidden start state paints first
+function heroReady() {
+  requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("hero-ready")));
+}
+
+/* ============================================================
+   1b. Hero "available for work": flip through the roles
+   ============================================================ */
+function initHeroHire() {
+  const hire = document.querySelector("[data-hire]");
+  if (!hire) return;
+  // Safety net: show it even if the intro never signals
+  setTimeout(heroReady, 3600);
+
+  const box = hire.querySelector("[data-hire-roles]");
+  const roles = [...box.children];
+  if (!roles.length) return;
+  let i = 0;
+
+  // The box takes the current role's width (CSS springs it there), so
+  // "roles" sits right after the word instead of after the longest one
+  const fit = (animate) => {
+    if (!animate) box.style.transition = "none";
+    box.style.width = roles[i].getBoundingClientRect().width + "px";
+    if (!animate) { void box.offsetWidth; box.style.transition = ""; }
+  };
+  fit(false);
+  if (document.fonts) document.fonts.ready.then(() => fit(false));
+  window.addEventListener("resize", () => fit(false));
+
+  if (roles.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  setInterval(() => {
+    if (document.hidden) return;
+    const out = roles[i];
+    i = (i + 1) % roles.length;
+    const next = roles[i];
+    out.classList.replace("is-in", "is-out");
+    // The next word starts below the line, without sliding there from above
+    next.style.transition = "none";
+    next.classList.remove("is-out");
+    void next.offsetWidth;
+    next.style.transition = "";
+    next.classList.add("is-in");
+    fit(true);
+  }, 2600);
 }
 
 /* ============================================================
@@ -458,6 +510,8 @@ function initContactForm() {
         if (!data.success) throw new Error(data.message);
         note.textContent = "Thanks! Your message was sent. I'll get back to you soon.";
         note.classList.add("is-success");
+        // Analytics (Umami): count sent messages and what they were about
+        if (window.umami) window.umami.track("Contact form sent", { reason: form.elements.reason.value });
         form.reset();
       })
       .catch(() => {
@@ -2008,12 +2062,15 @@ function initOutsideFrame() {
   if (!cameBack) store(() => { sessionStorage.removeItem("otf-broken"); sessionStorage.removeItem("otf-holes"); });
   const startBroken = reducedMotion || (cameBack && store(() => sessionStorage.getItem("otf-broken")) === "1");
 
-  // Two takes, one picked at random each load: the mirror or the rift.
-  // "Back" from the Outside page keeps the one you went through
-  // (?take=rift or ?take=mirror in the URL forces one, for a preview)
+  // Two takes: the mirror or the rift. The rift is parked for now, so
+  // visitors always get the mirror; set OTF_RIFT_ON to true to bring back
+  // the random pick. "Back" from the Outside page keeps the one you went
+  // through (?take=rift or ?take=mirror in the URL forces one, for a preview)
+  const OTF_RIFT_ON = false;
   const asked = new URLSearchParams(window.location.search).get("take");
-  const kept = asked === "rift" || asked === "mirror" ? asked : cameBack ? store(() => sessionStorage.getItem("otf-take")) : null;
-  const rift = kept ? kept === "rift" : Math.random() < 0.5;
+  const stored = cameBack ? store(() => sessionStorage.getItem("otf-take")) : null;
+  const kept = asked === "rift" || asked === "mirror" ? asked : OTF_RIFT_ON ? stored : null;
+  const rift = kept ? kept === "rift" : OTF_RIFT_ON && Math.random() < 0.5;
   store(() => sessionStorage.setItem("otf-take", rift ? "rift" : "mirror"));
   if (rift) root.classList.add("otf--rift");
   const buildScene = rift ? otfBuildRift : otfBuildMirror;
@@ -3048,4 +3105,28 @@ function initUpsideDown() {
     requestAnimationFrame(loop);
   };
   requestAnimationFrame(loop);
+}
+
+/* ============================================================
+   20. Analytics (Umami): page views are counted by the script in
+   each page's <head>; this adds the clicks worth knowing about.
+   Does nothing if the script is blocked or not loaded.
+   ============================================================ */
+function initAnalytics() {
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[href]");
+    if (!link || !window.umami) return;
+    const url = new URL(link.href, location.href);
+    const label = (link.getAttribute("aria-label") || link.textContent).replace(/\s+/g, " ").trim().slice(0, 60);
+
+    if (url.protocol === "mailto:") {
+      window.umami.track("Email click", { from: location.pathname });
+    } else if (url.origin !== location.origin) {
+      window.umami.track("Outbound link", { url: url.hostname + url.pathname, label });
+    } else if (/\/work\/[^/]+\/?$/.test(url.pathname) && url.pathname !== location.pathname) {
+      window.umami.track("Open case study", { project: url.pathname.split("/").filter(Boolean).pop(), from: location.pathname });
+    } else if (link.matches("[data-otf-cta]")) {
+      window.umami.track("Step inside");
+    }
+  });
 }

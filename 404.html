@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found | Mastouri Studio</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0c0c0e" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Absolute paths: Netlify serves this page for a missing URL at any depth -->
+  <link rel="preload" href="/fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .nf {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-block: clamp(24px, 4vw, 40px);
+    }
+    .nf__logo {
+      font-family: var(--font-label);
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .nf__code {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(7rem, 28vw, 22rem);
+      line-height: .85;
+      letter-spacing: -.05em;
+    }
+    .nf__code span { color: var(--color-accent); }
+    .nf__text {
+      max-width: 34ch;
+      margin-top: 1.5rem;
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      color: var(--color-muted);
+    }
+    .nf__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 2rem;
+      margin-top: 2rem;
+      font-family: var(--font-label);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .875rem;
+    }
+    .nf__links a { border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+    .nf__links a:hover,
+    .nf__links a:focus-visible { color: var(--color-accent); }
+  </style>
+  <!-- Analytics (Umami, cookie-free). Counts only on data-domains, so local testing is ignored -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="afde05f1-8b65-4721-976c-ca45010f0aeb" data-domains="your-domain.com"></script>
+</head>
+<body>
+  <main class="container nf">
+    <a class="nf__logo" href="/">MASTOURI.STUDIO</a>
+    <div>
+      <p class="section-label">(LOST IN THE FRAME)</p>
+      <h1 class="nf__code">4<span>0</span>4</h1>
+      <p class="nf__text">This page doesn't exist, or it moved. Let's get you back to something real.</p>
+      <nav class="nf__links" aria-label="Where to go">
+        <a href="/">Home</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact-form">Contact</a>
+      </nav>
+    </div>
+    <div class="rule"></div>
+  </main>
+</body>
+</html>

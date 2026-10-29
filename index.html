@@ -3,23 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mastouri Dhia - Full-Stack Developer & AI · mastouri's studio</title>
-  <meta name="description" content="The portfolio of Mastouri Dhia, full-stack developer and AI enthusiast: building practical digital products and exploring the intersection of technology and creativity." />
+  <title>Mastouri Dhia - Full-Stack Developer | Mastouri Studio</title>
+  <meta name="description" content="Portfolio of Mastouri Dhia, full-stack developer from Tunisia building APIs, mobile apps and AI-powered products. Case studies in TypeScript, React Native, Node.js and PostgreSQL: Orvexa, FreshStockAI, AgriLink and more." />
+  <meta name="author" content="Mastouri Dhia" />
+  <meta name="theme-color" content="#0c0c0e" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="canonical" href="https://your-domain.com/" />
 
   <!-- Social sharing (replace your-domain.com with the live domain) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mastouri Studio" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://your-domain.com/" />
-  <meta property="og:title" content="Mastouri Dhia - Full-Stack Developer & AI" />
-  <meta property="og:description" content="The portfolio of Mastouri Dhia, full-stack developer and AI enthusiast: building practical digital products and exploring the intersection of technology and creativity." />
+  <meta property="og:title" content="Mastouri Dhia - Full-Stack Developer" />
+  <meta property="og:description" content="Portfolio of Mastouri Dhia, full-stack developer from Tunisia building APIs, mobile apps and AI-powered products." />
   <meta property="og:image" content="https://your-domain.com/images/social/home.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Mastouri Dhia, Full-Stack Developer & AI Engineer" />
+  <meta property="og:image:alt" content="Mastouri Dhia, Full-Stack Developer" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mastouri Dhia - Full-Stack Developer" />
+  <meta name="twitter:description" content="Portfolio of Mastouri Dhia, full-stack developer from Tunisia." />
   <meta name="twitter:image" content="https://your-domain.com/images/social/home.jpg" />
+
+  <!-- Structured data: tells search engines who this site is about -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://your-domain.com/#website",
+        "url": "https://your-domain.com/",
+        "name": "Mastouri Studio",
+        "author": { "@id": "https://your-domain.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://your-domain.com/#person",
+        "name": "Mastouri Dhia",
+        "alternateName": "Dhia Mastouri",
+        "url": "https://your-domain.com/",
+        "image": "https://your-domain.com/images/hero-portrait.jpg",
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": { "@type": "Organization", "name": "360dmmc" },
+        "email": "mailto:contactmastourid@gmail.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "TN" },
+        "knowsAbout": ["Full-Stack Development", "AI Integration", "TypeScript", "React Native", "Node.js", "PostgreSQL", "Automation", "Cybersecurity"],
+        "sameAs": [
+          "https://github.com/mastouridhia",
+          "https://www.linkedin.com/in/mastouri-dhia",
+          "https://www.pinterest.com/dhiamastouri30/",
+          "https://open.spotify.com/user/315sq3ebs6kro6jbhpxjwou44ooe"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Local fonts -->
   <link rel="preload" href="fonts/funnel-display.woff2" as="font" crossorigin type="font/woff2" />
@@ -33,6 +73,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Analytics (Umami, cookie-free). Counts only on data-domains, so local testing is ignored -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="afde05f1-8b65-4721-976c-ca45010f0aeb" data-domains="your-domain.com"></script>
 </head>
 <body>
 
@@ -91,12 +133,12 @@
       <div class="container hero-inner">
         <!-- Portrait (desktop, positioned right) -->
         <div class="hero-portrait hero-portrait--desktop" data-hero-portrait>
-          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" />
+          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" width="976" height="1091" fetchpriority="high" />
         </div>
 
         <!-- Portrait (mobile) -->
         <div class="hero-portrait hero-portrait--mobile">
-          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" />
+          <img src="images/hero-portrait.jpg" alt="Mastouri Dhia" width="976" height="1091" />
         </div>
 
 
@@ -111,16 +153,25 @@
 
   <p class="hero-tagline">
     <span>Ideas, code & everything in between.</span>
-    <span>Breaking limits.</span>
   </p>
 
-  <ul class="hero-skills">
-    <li>Full-Stack Development</li>
-    <li>Artificial Intelligence</li>
-    <li>Backend &amp; APIs</li>
-    <li>Automation</li>
-    <li>Problem Solving</li>
-  </ul>
+  <!-- Availability: edit the roles in data-hire-roles (they rotate) and the place line -->
+  <div class="hero-hire" data-hire>
+    <p class="hero-hire__line">
+      <span class="sr-only">Open to full-stack, mobile and AI integration roles, remote or in Tunisia.</span>
+      <span aria-hidden="true">Open to
+        <span class="hero-hire__roles" data-hire-roles>
+          <span class="is-in">full-stack</span>
+          <span>mobile</span>
+          <span>AI integration</span>
+        </span>
+        roles</span>
+    </p>
+    <p class="hero-hire__where">
+      <span>Remote</span><span class="hero-hire__sep" aria-hidden="true">/</span><span>Tunisia</span>
+      <a class="hero-hire__cta" href="#contact-form">Let's talk <span class="hero-hire__arrow" aria-hidden="true">&rarr;</span></a>
+    </p>
+  </div>
 </div>
 </div>
 <div class="container"><div class="rule"></div></div>
@@ -185,7 +236,7 @@
   <span class="wave-word">useful</span>
   <span class="wave-word">digital</span>
   <span class="wave-word">experiences.</span>
-  <span class="wave-word">driven</span>
+  <span class="wave-word">Driven</span>
   <span class="wave-word">by</span>
   <span class="wave-word">curiosity</span>
   <span class="wave-word">and</span>
@@ -307,17 +358,17 @@
           <div class="xp-role__main">
             <div class="xp-role__head">
               <h3 class="xp-role__company">360dmmc</h3>
-              <p class="xp-role__title">AI Engineer</p>
+              <p class="xp-role__title">Full-Stack Developer</p>
             </div>
             <p class="xp-role__summary">
-              I work on <strong>FreshStockAI</strong>, the company's AI inventory and food-safety platform for
+              I work on <strong>FreshStockAI</strong>, the company's AI-powered inventory and food-safety platform for
               restaurants. I build across the stack: the TypeScript API and PostgreSQL schema, and the React Native
               app that kitchen staff use during service.
             </p>
             <ul class="xp-role__points">
-              <li>Built 40+ API endpoints, including dashboards, margin alerts, FDA FSMA 204 compliance scoring and AI daily recommendations.</li>
+              <li>Built 40+ API endpoints, including dashboards, margin alerts, FDA FSMA 204 compliance scoring and rule-based daily recommendations (what to prep, order and fix).</li>
               <li>Built the mobile purchase-order flow, from creating an order to receiving it into inventory.</li>
-              <li>Set up the camera, offline storage and frame-processing groundwork for Flash Audit, an AI shelf-counting feature.</li>
+              <li>Built the camera, offline storage and frame-processing layer that Flash Audit, the app's AI shelf-counting feature, runs on.</li>
               <li>Added scheduled expiry checks, push notifications and real-time updates over WebSockets.</li>
               <li>Set up <strong>360 E-Sign</strong> on my own, the company's internal e-signature tool: a self-hosted fork of DocuSeal on a VPS, with production Docker config, Postgres backup/restore and health-check scripts, and email-deliverability testing.</li>
             </ul>
@@ -570,7 +621,7 @@
          Song: put an mp3 at audio/outside-theme.mp3 (or change data-otf-song).
          Crack: the hit in data-otf-fx plays when the glass breaks.
          Look: the painted vines, tissue and glass are in data-otf-tex.
-         Second take, picked at random on load (.otf--rift): a photograph
+         Second take, parked for now (OTF_RIFT_ON in js/main.js; .otf--rift): a photograph
          of a burning tear in the ground (images/otf/rift-close.webp) that
          heats up with the scroll, erupts, and dives you into its core.
          ?take=rift or ?take=mirror in the URL forces one. -->
@@ -617,8 +668,7 @@
       (LET'S BUILD SOMETHING)
     </p>
 
-    <h2 class="contact-title"> What’s next ?    
-    </h2>
+    <h2 class="contact-title">What’s next?</h2>
 
     <p class="contact-direct">
       <span>Or reach me directly:</span>
@@ -667,11 +717,11 @@
             <option value="" disabled selected>
               Select an option
             </option>
-            <option value="ai-engineering">
-              AI Engineering / Machine Learning
-            </option>
             <option value="ai-integration">
-              AI Integration / Automation
+              AI Integration
+            </option>
+            <option value="automation">
+              Automation / Workflows
             </option>
             <option value="fullstack">
               Full-Stack Development
