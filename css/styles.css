@@ -320,6 +320,8 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   transition: color 200ms var(--ease), background-size 320ms var(--ease);
 }
 .menu-email:hover { color: var(--color-accent); background-size: 0 1px; background-position: 100% 100%; }
+/* Email + CV side by side at the bottom of the menu */
+.menu-foot { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; }
 
 /* ============================================================
    HERO

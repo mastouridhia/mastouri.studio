@@ -1,5 +1,6 @@
 # Personal documents
 *.pdf
+!Dhiaeddine_Mastouri_CV.pdf
 
 # Local editor / tool settings
 .claude/settings.local.json
